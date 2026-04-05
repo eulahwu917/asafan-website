@@ -1,0 +1,11 @@
+# robots.txt - ASAFAN
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.asafan.com.br/sitemap.xml
+
+# Block non-deploy directories
+Disallow: /assets_upgrade/
+Disallow: /.claude/
+Disallow: /.gstack/

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASAFAN — Fabricante de microventiladores industriais AC/DC, ventiladores axiais e acessórios para ventilação forçada. Atendemos Schindler, Mercedes-Benz e Faber-Castell. Cotia/SP.">
+  <meta name="keywords" content="microventilador industrial, ventilador axial industrial, ventilação forçada, cooler painel elétrico, microventilador 24V, microventilador 12V, ventilador DC, ASAFAN, ventilação industrial Brasil">
+  <title>ASAFAN | Microventiladores e Ventiladores Axiais Industriais</title>
+  <link rel="canonical" href="https://www.asafan.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.asafan.com.br/">
+  <meta property="og:title" content="ASAFAN | Microventiladores e Ventiladores Axiais Industriais">
+  <meta property="og:description" content="Fabricante de microventiladores industriais AC/DC, ventiladores axiais e acessórios para ventilação forçada. Cotia/SP.">
+  <meta property="og:image" content="https://www.asafan.com.br/assets/logo.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="ASAFAN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ASAFAN | Microventiladores e Ventiladores Axiais Industriais">
+  <meta name="twitter:description" content="Fabricante de microventiladores industriais AC/DC, ventiladores axiais e acessórios para ventilação forçada.">
+  <meta name="twitter:image" content="https://www.asafan.com.br/assets/logo.png">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">
+        <img src="assets/logo.png" alt="ASAFAN Logo">
+      </a>
+      <button class="header__toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="active">Home</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <div class="nav-dropdown">
+          <a href="produtos.html">Produtos</a>
+          <div class="nav-dropdown__menu">
+            <a href="microventiladores.html">Microventiladores</a>
+            <a href="axiais.html">Axiais</a>
+            <a href="acessorios.html">Acessórios</a>
+          </div>
+        </div>
+        <a href="fale-conosco.html">Fale Conosco</a>
+        <a href="carreira.html">Carreira</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__video-bg">
+      <video autoplay muted loop playsinline poster="assets/hero-bg.jpg" id="heroVideo">
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="container">
+      <h1 class="hero__title">Soluções em ventilação forçada para a indústria</h1>
+      <p class="hero__subtitle">Microventiladores AC/DC, ventiladores axiais, grades de proteção e placas peltier — com qualidade e assistência técnica desde 1999.</p>
+      <div class="hero__actions">
+        <a href="produtos.html" class="btn btn--white">Ver Produtos</a>
+        <a href="fale-conosco.html" class="btn btn--primary">Fale Conosco</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-showcase">
+    <div class="container">
+      <div class="products-showcase__header">
+        <h2 class="products-showcase__title">NOSSOS PRODUTOS</h2>
+        <p class="products-showcase__sub">Explore nossa linha completa de produtos para ventilação industrial.</p>
+      </div>
+      <div class="products-showcase__grid">
+        <a href="microventiladores.html" class="showcase-card">
+          <div class="showcase-card__img">
+            <img src="assets/microventiladores-thumb.png" alt="Microventiladores">
+          </div>
+          <div class="showcase-card__overlay">
+            <h3 class="showcase-card__title">Microventiladores</h3>
+            <span class="showcase-card__link">Ver detalhes &#8594;</span>
+          </div>
+        </a>
+        <a href="axiais.html" class="showcase-card">
+          <div class="showcase-card__img">
+            <img src="assets/axiais-thumb.png" alt="Ventiladores Axiais">
+          </div>
+          <div class="showcase-card__overlay">
+            <h3 class="showcase-card__title">Ventiladores Axiais</h3>
+            <span class="showcase-card__link">Ver detalhes &#8594;</span>
+          </div>
+        </a>
+        <a href="acessorios.html" class="showcase-card">
+          <div class="showcase-card__img">
+            <img src="assets/acessorios-thumb.png" alt="Acessórios">
+          </div>
+          <div class="showcase-card__overlay">
+            <h3 class="showcase-card__title">Acessórios</h3>
+            <span class="showcase-card__link">Ver detalhes &#8594;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINE -->
+  <section class="tagline">
+    <div class="container">
+      <h2 class="tagline__title">Trazendo os melhores ventiladores para o Brasil</h2>
+      <p class="tagline__text">Ampla linha de microventiladores AC/DC, ventiladores axiais, grades, telas de proteção e placas peltier para os mais diversos segmentos industriais.</p>
+      <p class="tagline__highlight">Referência no mercado brasileiro de ventilação forçada.</p>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners">
+    <div class="container">
+      <div class="partners__label">Empresas que confiam na ASAFAN</div>
+      <div class="partners__grid">
+        <div class="partners__item"><img src="assets/partner-schindler.png" alt="Schindler" loading="lazy"></div>
+        <div class="partners__item"><img src="assets/partner-schulz.png" alt="Schulz Compressores" loading="lazy"></div>
+        <div class="partners__item"><img src="assets/partner-mercedesbenz.png" alt="Mercedes-Benz" loading="lazy"></div>
+        <div class="partners__item"><img src="assets/partner-mundialsa.png" alt="Mundial SA" loading="lazy"></div>
+        <div class="partners__item"><img src="assets/partner-fabercastell.png" alt="Faber-Castell" loading="lazy"></div>
+        <div class="partners__item"><img src="assets/partner-elvi.png" alt="ELVI" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="cta-banner__title">Precisa de ajuda com seu projeto?</h2>
+      <a href="fale-conosco.html" class="btn btn--red">Fale com nossa equipe</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/logo.png" alt="ASAFAN">
+          </div>
+          <p class="footer__desc">Desde 1999, a ASAFAN é referência em ventilação forçada no Brasil. Importamos e distribuímos soluções completas em microventiladores, ventiladores axiais e acessórios para a indústria.</p>
+        </div>
+        <div>
+          <h4 class="footer__title">Navegação</h4>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
+            <a href="carreira.html">Carreira</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__title">Contato</h4>
+          <p class="footer__contact-item">Rua Santa Mônica, 1130<br>Parque Industrial San Jose<br>Cotia/SP — CEP: 06715-865</p>
+          <p class="footer__contact-item">(11) 3406-5088<br>(11) 3406-5425<br>(11) 4617-7254</p>
+          <p class="footer__contact-item">comercial@asafan.com.br</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        &copy; 2025 ASAFAN — Adda South America Corporation. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ASAFAN",
+    "legalName": "Adda South America Corporation",
+    "url": "https://www.asafan.com.br",
+    "logo": "https://www.asafan.com.br/assets/logo.png",
+    "foundingDate": "1999",
+    "description": "Fabricante de microventiladores industriais AC/DC, ventiladores axiais e acessórios para ventilação forçada.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Santa Mônica, 1130",
+      "addressLocality": "Cotia",
+      "addressRegion": "SP",
+      "postalCode": "06715-865",
+      "addressCountry": "BR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-11-3406-5088",
+      "contactType": "sales",
+      "email": "comercial@asafan.com.br",
+      "availableLanguage": "Portuguese"
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Structured Data: WebSite (for sitelinks search box) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ASAFAN",
+    "url": "https://www.asafan.com.br"
+  }
+  </script>
+</body>
+</html>

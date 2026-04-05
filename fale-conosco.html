@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fale com a ASAFAN — solicite orçamento de microventiladores e ventiladores axiais industriais. Telefone, e-mail e formulário. Cotia/SP.">
+  <meta name="keywords" content="contato ASAFAN, orçamento microventilador, orçamento ventilador axial, ventilação industrial contato, ASAFAN Cotia SP, telefone ASAFAN">
+  <title>Fale Conosco | ASAFAN — Ventilação Industrial | Cotia/SP</title>
+  <link rel="canonical" href="https://www.asafan.com.br/fale-conosco.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.asafan.com.br/fale-conosco.html">
+  <meta property="og:title" content="Fale Conosco | ASAFAN — Ventilação Industrial">
+  <meta property="og:description" content="Solicite orçamento de microventiladores e ventiladores axiais industriais. Telefone, e-mail e formulário de contato.">
+  <meta property="og:image" content="https://www.asafan.com.br/assets/logo.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="ASAFAN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fale Conosco | ASAFAN — Ventilação Industrial">
+  <meta name="twitter:description" content="Solicite orçamento de microventiladores e ventiladores axiais. Cotia/SP.">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">
+        <img src="assets/logo.png" alt="ASAFAN Logo">
+      </a>
+      <button class="header__toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <div class="nav-dropdown">
+          <a href="produtos.html">Produtos</a>
+          <div class="nav-dropdown__menu">
+            <a href="microventiladores.html">Microventiladores</a>
+            <a href="axiais.html">Axiais</a>
+            <a href="acessorios.html">Acessórios</a>
+          </div>
+        </div>
+        <a href="fale-conosco.html" class="active">Fale Conosco</a>
+        <a href="carreira.html">Carreira</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h1 class="page-header__title">Entre em Contato</h1>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <p class="section__subtitle">Preencha o formulário ou utilize nossos canais diretos. Responderemos em até 24 horas úteis.</p>
+      <div class="contact-grid">
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <div class="contact-info__icon">&#9906;</div>
+            <div>
+              <div class="contact-info__label">Endereço</div>
+              <div class="contact-info__text">Rua Santa Mônica, 1130<br>Parque Industrial San Jose<br>Cotia/São Paulo<br>CEP: 06715-865</div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">&#9742;</div>
+            <div>
+              <div class="contact-info__label">Telefone</div>
+              <div class="contact-info__text">
+                <a href="tel:1134065088">(11) 3406-5088</a><br>
+                <a href="tel:1134065425">(11) 3406-5425</a><br>
+                <a href="tel:1146177254">(11) 4617-7254</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">&#9993;</div>
+            <div>
+              <div class="contact-info__label">Comercial</div>
+              <div class="contact-info__text"><a href="mailto:comercial@asafan.com.br">comercial@asafan.com.br</a></div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">&#9993;</div>
+            <div>
+              <div class="contact-info__label">SAC / Pós-venda</div>
+              <div class="contact-info__text"><a href="mailto:financeiro1@asafan.com.br">financeiro1@asafan.com.br</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="form" id="contactForm">
+          <form onsubmit="return handleContactForm(event)">
+            <div class="form__group">
+              <label class="form__label">Nome completo <span class="required">*</span></label>
+              <input type="text" class="form__input" name="nome" required placeholder="Seu nome completo">
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label">Telefone <span class="required">*</span></label>
+                <input type="tel" class="form__input" name="telefone" required placeholder="(11) 9999-9999">
+              </div>
+              <div class="form__group">
+                <label class="form__label">E-mail <span class="required">*</span></label>
+                <input type="email" class="form__input" name="email" required placeholder="seu@email.com">
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label">Mensagem</label>
+              <textarea class="form__textarea" name="mensagem" placeholder="Descreva sua necessidade ou dúvida..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width:100%">Enviar Mensagem</button>
+          </form>
+          <div class="form__success" id="contactSuccess">
+            Mensagem enviada com sucesso! Retornaremos em breve.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Localização</h2>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8!2d-46.9194!3d-23.5978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf01c0a2b3c9b7%3A0x0!2sRua+Santa+M%C3%B4nica%2C+1130+-+Parque+Industrial+San+Jose%2C+Cotia+-+SP%2C+06715-865!5e0!3m2!1spt-BR!2sbr!4v1"
+          width="100%"
+          height="400"
+          style="border:0; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/logo.png" alt="ASAFAN">
+          </div>
+          <p class="footer__desc">Desde 1999, a ASAFAN é referência em ventilação forçada no Brasil. Importamos e distribuímos soluções completas em microventiladores, ventiladores axiais e acessórios para a indústria.</p>
+        </div>
+        <div>
+          <h4 class="footer__title">Navegação</h4>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
+            <a href="carreira.html">Carreira</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__title">Contato</h4>
+          <p class="footer__contact-item">Rua Santa Mônica, 1130<br>Parque Industrial San Jose<br>Cotia/SP — CEP: 06715-865</p>
+          <p class="footer__contact-item">(11) 3406-5088<br>(11) 3406-5425<br>(11) 4617-7254</p>
+          <p class="footer__contact-item">comercial@asafan.com.br</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        &copy; 2025 ASAFAN — Adda South America Corporation. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ASAFAN",
+    "legalName": "Adda South America Corporation",
+    "image": "https://www.asafan.com.br/assets/logo.png",
+    "url": "https://www.asafan.com.br",
+    "@id": "https://www.asafan.com.br/#localbusiness",
+    "telephone": "+55-11-3406-5088",
+    "email": "comercial@asafan.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Santa Mônica, 1130",
+      "addressLocality": "Cotia",
+      "addressRegion": "SP",
+      "postalCode": "06715-865",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.6044,
+      "longitude": -46.9186
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Brazil"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.asafan.com.br/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fale Conosco",
+        "item": "https://www.asafan.com.br/fale-conosco.html"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

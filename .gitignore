@@ -1,0 +1,4 @@
+assets_upgrade/
+.claude/
+.gstack/
+node_modules/

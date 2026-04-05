@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trabalhe na ASAFAN — envie seu currículo e faça parte da equipe de uma das principais empresas de ventilação industrial do Brasil. Vagas em Cotia/SP.">
+  <meta name="keywords" content="vagas ASAFAN, trabalhe ASAFAN, carreira ventilação industrial, emprego Cotia SP, vagas indústria Cotia">
+  <title>Trabalhe na ASAFAN | Vagas em Ventilação Industrial</title>
+  <link rel="canonical" href="https://www.asafan.com.br/carreira.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.asafan.com.br/carreira.html">
+  <meta property="og:title" content="Trabalhe na ASAFAN | Vagas em Ventilação Industrial">
+  <meta property="og:description" content="Envie seu currículo e faça parte da equipe ASAFAN. Vagas em Cotia/SP.">
+  <meta property="og:image" content="https://www.asafan.com.br/assets/logo.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="ASAFAN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Trabalhe na ASAFAN | Vagas em Ventilação Industrial">
+  <meta name="twitter:description" content="Envie seu currículo e faça parte da equipe ASAFAN em Cotia/SP.">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">
+        <img src="assets/logo.png" alt="ASAFAN Logo">
+      </a>
+      <button class="header__toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <div class="nav-dropdown">
+          <a href="produtos.html">Produtos</a>
+          <div class="nav-dropdown__menu">
+            <a href="microventiladores.html">Microventiladores</a>
+            <a href="axiais.html">Axiais</a>
+            <a href="acessorios.html">Acessórios</a>
+          </div>
+        </div>
+        <a href="fale-conosco.html">Fale Conosco</a>
+        <a href="carreira.html" class="active">Carreira</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h1 class="page-header__title">Trabalhe na ASAFAN</h1>
+  </section>
+
+  <!-- CAREER CONTENT -->
+  <section class="section">
+    <div class="container">
+      <div class="career-intro">
+        <p>Buscamos profissionais comprometidos, com vontade de crescer e dispostos a aprender continuamente. Na ASAFAN, valorizamos quem tem paixão pelo que faz.</p>
+        <p>Preencha o formulário abaixo com seus dados e experiência. Nossa equipe entrará em contato caso seu perfil esteja alinhado com nossas oportunidades.</p>
+      </div>
+
+      <div class="career-form">
+        <div class="form" id="careerForm">
+          <form onsubmit="return handleCareerForm(event)">
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label">Nome <span class="required">*</span></label>
+                <input type="text" class="form__input" name="nome" required placeholder="Seu nome completo">
+              </div>
+              <div class="form__group">
+                <label class="form__label">Data de Nascimento <span class="required">*</span></label>
+                <input type="text" class="form__input" name="nascimento" required placeholder="DD/MM/AAAA">
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label">Sexo <span class="required">*</span></label>
+                <select class="form__select" name="genero" required>
+                  <option value="">Selecione...</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                  <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label class="form__label">Estado Civil</label>
+                <input type="text" class="form__input" name="estado_civil" placeholder="Estado civil">
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label">CPF <span class="required">*</span></label>
+                <input type="text" class="form__input" name="cpf" required placeholder="000.000.000-00">
+              </div>
+              <div class="form__group">
+                <label class="form__label">Endereço <span class="required">*</span></label>
+                <input type="text" class="form__input" name="endereco" required placeholder="Seu endereço completo">
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label">E-mail <span class="required">*</span></label>
+                <input type="email" class="form__input" name="email" required placeholder="seu@email.com">
+              </div>
+              <div class="form__group">
+                <label class="form__label">Telefone <span class="required">*</span></label>
+                <input type="text" class="form__input" name="telefone" required placeholder="(11) 9999-9999">
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label">Cargo de Interesse <span class="required">*</span></label>
+                <select class="form__select" name="cargo" required>
+                  <option value="">Selecione...</option>
+                  <option value="Administrativo">Administrativo</option>
+                  <option value="Financeiro">Financeiro</option>
+                  <option value="Comercial e Vendas">Comercial e Vendas</option>
+                  <option value="Representante Comercial">Representante Comercial</option>
+                  <option value="Estoque/Logística">Estoque/Logística</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label class="form__label">Pretensão Salarial</label>
+                <input type="text" class="form__input" name="pretensao" placeholder="R$ 0.000,00">
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label">Experiência Profissional <span class="required">*</span></label>
+              <textarea class="form__textarea" name="experiencia" required placeholder="Nome da Empresa, Cargo, Atribuição e Realizações, Data de entrada e Saída de Cargo e Salário Final"></textarea>
+            </div>
+            <div class="form__group">
+              <label class="form__label">Formação <span class="required">*</span></label>
+              <textarea class="form__textarea" name="formacao" required placeholder="Grau de Formação, Nome da Instituição, Curso e Data de Início e Término"></textarea>
+            </div>
+            <div class="form__group">
+              <label class="form__label">Informações Complementares</label>
+              <textarea class="form__textarea" name="complementares" placeholder="Outras informações relevantes..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width:100%">Enviar</button>
+          </form>
+          <div class="form__success" id="careerSuccess">
+            Obrigada por se interessar na AsaFan. Entraremos em contato logo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/logo.png" alt="ASAFAN">
+          </div>
+          <p class="footer__desc">Desde 1999, a ASAFAN é referência em ventilação forçada no Brasil. Importamos e distribuímos soluções completas em microventiladores, ventiladores axiais e acessórios para a indústria.</p>
+        </div>
+        <div>
+          <h4 class="footer__title">Navegação</h4>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
+            <a href="carreira.html">Carreira</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__title">Contato</h4>
+          <p class="footer__contact-item">Rua Santa Mônica, 1130<br>Parque Industrial San Jose<br>Cotia/SP — CEP: 06715-865</p>
+          <p class="footer__contact-item">(11) 3406-5088<br>(11) 3406-5425<br>(11) 4617-7254</p>
+          <p class="footer__contact-item">comercial@asafan.com.br</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        &copy; 2025 ASAFAN — Adda South America Corporation. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.asafan.com.br/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Carreira",
+        "item": "https://www.asafan.com.br/carreira.html"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
