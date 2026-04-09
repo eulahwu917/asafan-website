@@ -15,6 +15,47 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Product catalog filters
+document.addEventListener('DOMContentLoaded', function() {
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var group = btn.getAttribute('data-filter');
+      // Toggle active within same group
+      document.querySelectorAll('.filter-btn[data-filter="' + group + '"]').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+
+      // Get active filters
+      var tipo = document.querySelector('.filter-btn[data-filter="tipo"].active').getAttribute('data-value');
+      var tensao = document.querySelector('.filter-btn[data-filter="tensao"].active').getAttribute('data-value');
+
+      // Filter cards
+      var cards = document.querySelectorAll('.product-card');
+      var count = 0;
+      cards.forEach(function(card) {
+        var cardTipo = card.getAttribute('data-tipo') || '';
+        var cardTensao = card.getAttribute('data-tensao') || '';
+        var showTipo = tipo === 'all' || cardTipo === tipo;
+        var showTensao = tensao === 'all' || cardTensao === tensao;
+        if (showTipo && showTensao) {
+          card.style.display = '';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update count
+      var countEl = document.querySelector('.catalog__count');
+      if (countEl) countEl.textContent = count + ' produto(s) encontrado(s)';
+    });
+  });
+});
+
 // Contact form handler
 function handleContactForm(e) {
   e.preventDefault();

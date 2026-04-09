@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://www.asafan.com.br/produtos.html">
   <meta property="og:title" content="Produtos ASA Fan | Microventiladores, Ventiladores Axiais e Acessórios">
   <meta property="og:description" content="Microventiladores industriais AC/DC, ventiladores axiais de alta vazão e acessórios para ventilação forçada. Solicite orçamento.">
-  <meta property="og:image" content="https://www.asafan.com.br/assets/logo.png">
+  <meta property="og:image" content="https://www.asafan.com.br/assets/logo/logo.png">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="ASA Fan">
 
@@ -22,13 +22,13 @@
   <meta name="twitter:title" content="Produtos ASA Fan | Microventiladores, Axiais e Acessórios">
   <meta name="twitter:description" content="Microventiladores industriais AC/DC, ventiladores axiais e acessórios para ventilação forçada.">
 
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <meta name="twitter:image" content="https://www.asafan.com.br/assets/logo.png">
+  <meta name="twitter:image" content="https://www.asafan.com.br/assets/logo/logo.png">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
   <header class="header">
     <div class="container">
       <a href="index.html" class="header__logo">
-        <img src="assets/logo.png" alt="ASA Fan Logo">
+        <img src="assets/logo/logo.png" alt="ASA Fan Logo">
       </a>
       <button class="header__toggle" onclick="toggleMenu()" aria-label="Abrir menu">
         <span></span><span></span><span></span>
@@ -63,64 +63,643 @@
   <!-- PAGE HEADER -->
   <section class="page-header">
     <div class="container">
-      <h1 class="page-header__title">Produtos ASA Fan</h1>
-      <p class="page-header__breadcrumb">Reconhecida pela qualidade e variedade, a ASA Fan oferece soluções completas em ventilação forçada.</p>
+      <h1 class="page-header__title">Catálogo Técnico</h1>
+      <p class="page-header__breadcrumb">Encontre o componente certo para sua aplicação industrial.</p>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section class="portfolio">
+  <!-- PRODUCT CATALOG -->
+  <section class="catalog">
     <div class="container">
-      <div class="portfolio__grid">
-        <a href="microventiladores.html" class="portfolio-card">
-          <div class="portfolio-card__img">
-            <img src="assets/microventiladores-thumb.png" alt="Microventiladores AC/DC">
+      <div class="catalog__layout">
+
+        <!-- SIDEBAR FILTERS -->
+        <aside class="catalog__sidebar">
+          <div class="filter-group">
+            <h3 class="filter-group__title">Tipo</h3>
+            <button class="filter-btn active" data-filter="tipo" data-value="all">Todos</button>
+            <button class="filter-btn" data-filter="tipo" data-value="micro-ac">Microventilador AC</button>
+            <button class="filter-btn" data-filter="tipo" data-value="micro-dc">Microventilador DC</button>
+            <button class="filter-btn" data-filter="tipo" data-value="axial">Axial</button>
+            <button class="filter-btn" data-filter="tipo" data-value="acessorio">Acessório</button>
           </div>
-          <div class="portfolio-card__body">
-            <h3 class="portfolio-card__title">Microventiladores AC/DC</h3>
-            <p class="portfolio-card__desc">Séries AC e DC para resfriamento de equipamentos elétricos, eletrônicos e industriais. Dimensões de 40mm a 172mm.</p>
-            <div class="portfolio-card__tags">
-              <span>AC</span><span>DC</span><span>40–172mm</span><span>110V/220V/24V/12V</span>
+          <div class="filter-group">
+            <h3 class="filter-group__title">Tensão</h3>
+            <button class="filter-btn active" data-filter="tensao" data-value="all">Todas</button>
+            <button class="filter-btn" data-filter="tensao" data-value="12v">12V</button>
+            <button class="filter-btn" data-filter="tensao" data-value="24v">24V</button>
+            <button class="filter-btn" data-filter="tensao" data-value="110v">110V</button>
+            <button class="filter-btn" data-filter="tensao" data-value="220v">220V</button>
+            <button class="filter-btn" data-filter="tensao" data-value="bivolt">Bivolt</button>
+          </div>
+        </aside>
+
+        <!-- PRODUCT GRID -->
+        <div class="catalog__main">
+          <p class="catalog__count">46 produto(s) encontrado(s)</p>
+          <div class="catalog__grid">
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/A201.jpeg" alt="Produto A201" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
-            <span class="portfolio-card__link">Ver linha completa &rarr;</span>
           </div>
-        </a>
-        <a href="axiais.html" class="portfolio-card">
-          <div class="portfolio-card__img">
-            <img src="assets/axiais-thumb.png" alt="Ventiladores Axiais">
-          </div>
-          <div class="portfolio-card__body">
-            <h3 class="portfolio-card__title">Ventiladores Axiais</h3>
-            <p class="portfolio-card__desc">Para vazões maiores em sistemas de ventilação industrial. 5 pás, disponíveis em 200mm, 250mm e 300mm.</p>
-            <div class="portfolio-card__tags">
-              <span>5 Pás</span><span>200–300mm</span><span>Alta Vazão</span>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/E171.jpeg" alt="Produto E171" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
-            <span class="portfolio-card__link">Ver linha completa &rarr;</span>
           </div>
-        </a>
-        <a href="acessorios.html" class="portfolio-card">
-          <div class="portfolio-card__img">
-            <img src="assets/acessorios-thumb.png" alt="Acessórios e Módulos">
-          </div>
-          <div class="portfolio-card__body">
-            <h3 class="portfolio-card__title">Acessórios e Módulos</h3>
-            <p class="portfolio-card__desc">Grades metálicas, proteções plásticas e placas Peltier para complementar seu sistema de ventilação e resfriamento.</p>
-            <div class="portfolio-card__tags">
-              <span>Grades</span><span>Proteções</span><span>Peltier</span>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/t30.jpeg" alt="Produto T30" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
-            <span class="portfolio-card__link">Ver linha completa &rarr;</span>
           </div>
-        </a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/T40.jpeg" alt="Produto T40" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/t41.jpeg" alt="Produto T41" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/X301.jpeg" alt="Produto X301" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/X502.jpeg" alt="Produto X502" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083330_586.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083355_455.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083559_504.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083617_849.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083641_051.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083649_096.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083818_691.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083914_586.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083927_001CS.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_083927_002CS.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_084815_123.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_084838_168.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_084915_802.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085125_491.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085208_781.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085236_048.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085255_935.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085308_079.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085340_199.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085509_899.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085558_475.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085618_691.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085620_693.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085651_897.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085714_012.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085731_077.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085804_748.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085839_383.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085858_386.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085915_641.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_085942_149.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090031_250.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090059_658.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090119_001CS.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090206_474.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090222_578.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090248_138.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090308_430.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card__img"><img src="assets/product/IMG_20260409_090338_652.jpg" alt="Produto" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">[Placeholder]</p>
+            <h3 class="product-card__title">[Placeholder]</h3>
+            <p class="product-card__specs">[Placeholder]</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-banner">
-    <div class="container">
-      <h2 class="cta-banner__title">Precisa de ajuda com seu projeto?</h2>
-      <p class="cta-banner__desc">Nosso time técnico ajuda você a especificar o ventilador certo. Sem compromisso.</p>
-      <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="btn btn--cta-outline"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar com especialista</a>
     </div>
   </section>
 
@@ -130,7 +709,7 @@
       <div class="footer__content">
         <div>
           <div class="footer__logo">
-            <img src="assets/logo.png" alt="ASA Fan">
+            <img src="assets/logo/logo.png" alt="ASA Fan">
           </div>
           <p class="footer__desc">Ventilação industrial com precisão desde 1999.</p>
         </div>
