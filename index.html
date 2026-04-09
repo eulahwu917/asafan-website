@@ -15,7 +15,7 @@
   <meta property="og:description" content="Fabricante de microventiladores industriais AC/DC, ventiladores axiais e acessórios para ventilação forçada. Cotia/SP.">
   <meta property="og:image" content="https://www.asafan.com.br/assets/logo.png">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="ASAFAN">
+  <meta property="og:site_name" content="ASA Fan">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -25,8 +25,8 @@
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -35,14 +35,14 @@
   <header class="header">
     <div class="container">
       <a href="index.html" class="header__logo">
-        <img src="assets/logo.png" alt="ASAFAN Logo">
+        <img src="assets/logo.png" alt="ASA Fan Logo">
       </a>
       <button class="header__toggle" onclick="toggleMenu()" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
       <nav class="header__nav" id="mainNav">
         <a href="index.html" class="active">Home</a>
-        <a href="quem-somos.html">Quem Somos</a>
+        <a href="quem-somos.html">Sobre</a>
         <div class="nav-dropdown">
           <a href="produtos.html">Produtos</a>
           <div class="nav-dropdown__menu">
@@ -51,8 +51,10 @@
             <a href="acessorios.html">Acessórios</a>
           </div>
         </div>
-        <a href="fale-conosco.html">Fale Conosco</a>
+        <a href="aplicacoes.html">Aplicações</a>
         <a href="carreira.html">Carreira</a>
+        <a href="fale-conosco.html">Contato</a>
+        <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="header__cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Solicitar Cotação</a>
       </nav>
     </div>
   </header>
@@ -60,80 +62,167 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__video-bg">
-      <video autoplay muted loop playsinline poster="assets/hero-bg.jpg" id="heroVideo">
+      <video autoplay muted loop playsinline poster="assets/hero-bg.jpg">
         <source src="assets/hero-video.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero__overlay"></div>
+    <div class="hero__grid-pattern"></div>
     <div class="container">
-      <h1 class="hero__title">Soluções em ventilação forçada para a indústria</h1>
-      <p class="hero__subtitle">Microventiladores AC/DC, ventiladores axiais, grades de proteção e placas peltier — com qualidade e assistência técnica desde 1999.</p>
-      <div class="hero__actions">
-        <a href="produtos.html" class="btn btn--white">Ver Produtos</a>
-        <a href="fale-conosco.html" class="btn btn--primary">Fale Conosco</a>
+      <div class="hero__split">
+        <div class="hero__content">
+          <h1 class="hero__title">Ventilação industrial <span class="hero__title--red">de precisão.</span><br><span class="hero__title--sub">Há 25 anos movendo a indústria brasileira.</span></h1>
+          <p class="hero__subtitle">Microventiladores AC/DC, axiais e acessórios para aplicações que não permitem falha. Especificação técnica, entrega garantida.</p>
+          <div class="hero__actions">
+            <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="btn btn--red"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Solicitar Cotação</a>
+            <a href="produtos.html" class="btn btn--outline">Ver Catálogo Técnico</a>
+          </div>
+          <div class="hero__stats">
+            <span class="hero__stat"><span class="hero__stat-dot"></span>25 anos de mercado</span>
+            <span class="hero__stat"><span class="hero__stat-dot"></span>500+ aplicações atendidas</span>
+            <span class="hero__stat"><span class="hero__stat-dot"></span>Fabricação nacional</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section class="products-showcase">
-    <div class="container">
-      <div class="products-showcase__header">
-        <h2 class="products-showcase__title">NOSSOS PRODUTOS</h2>
-        <p class="products-showcase__sub">Explore nossa linha completa de produtos para ventilação industrial.</p>
-      </div>
-      <div class="products-showcase__grid">
-        <a href="microventiladores.html" class="showcase-card">
-          <div class="showcase-card__img">
-            <img src="assets/microventiladores-thumb.png" alt="Microventiladores">
-          </div>
-          <div class="showcase-card__overlay">
-            <h3 class="showcase-card__title">Microventiladores</h3>
-            <span class="showcase-card__link">Ver detalhes &#8594;</span>
-          </div>
-        </a>
-        <a href="axiais.html" class="showcase-card">
-          <div class="showcase-card__img">
-            <img src="assets/axiais-thumb.png" alt="Ventiladores Axiais">
-          </div>
-          <div class="showcase-card__overlay">
-            <h3 class="showcase-card__title">Ventiladores Axiais</h3>
-            <span class="showcase-card__link">Ver detalhes &#8594;</span>
-          </div>
-        </a>
-        <a href="acessorios.html" class="showcase-card">
-          <div class="showcase-card__img">
-            <img src="assets/acessorios-thumb.png" alt="Acessórios">
-          </div>
-          <div class="showcase-card__overlay">
-            <h3 class="showcase-card__title">Acessórios</h3>
-            <span class="showcase-card__link">Ver detalhes &#8594;</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TAGLINE -->
-  <section class="tagline">
-    <div class="container">
-      <h2 class="tagline__title">Trazendo os melhores ventiladores para o Brasil</h2>
-      <p class="tagline__text">Ampla linha de microventiladores AC/DC, ventiladores axiais, grades, telas de proteção e placas peltier para os mais diversos segmentos industriais.</p>
-      <p class="tagline__highlight">Referência no mercado brasileiro de ventilação forçada.</p>
-    </div>
-  </section>
-
-  <!-- PARTNERS -->
+  <!-- PARTNERS / TRUST -->
   <section class="partners">
     <div class="container">
-      <div class="partners__label">Empresas que confiam na ASAFAN</div>
+      <div class="partners__label">Confiança de quem exige mais</div>
       <div class="partners__grid">
         <div class="partners__item"><img src="assets/partner-schindler.png" alt="Schindler" loading="lazy"></div>
         <div class="partners__item"><img src="assets/partner-schulz.png" alt="Schulz Compressores" loading="lazy"></div>
         <div class="partners__item"><img src="assets/partner-mercedesbenz.png" alt="Mercedes-Benz" loading="lazy"></div>
-        <div class="partners__item"><img src="assets/partner-mundialsa.png" alt="Mundial SA" loading="lazy"></div>
         <div class="partners__item"><img src="assets/partner-fabercastell.png" alt="Faber-Castell" loading="lazy"></div>
         <div class="partners__item"><img src="assets/partner-elvi.png" alt="ELVI" loading="lazy"></div>
+        <div class="partners__item"><img src="assets/partner-mundialsa.png" alt="Mundial SA" loading="lazy"></div>
+      </div>
+      <p class="partners__desc">Fornecedores homologados pelas maiores indústrias do Brasil escolhem ASA Fan pela confiança técnica que só 25 anos de especialização entregam.</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio">
+    <div class="container">
+      <div class="portfolio__header">
+        <h2 class="portfolio__title">Nosso Portfólio</h2>
+        <p class="portfolio__sub">Componentes desenvolvidos para ambientes industriais exigentes</p>
+      </div>
+      <div class="portfolio__grid">
+        <a href="microventiladores.html" class="portfolio-card">
+          <div class="portfolio-card__img">
+            <img src="assets/microventiladores-thumb.png" alt="Microventiladores AC/DC">
+          </div>
+          <div class="portfolio-card__body">
+            <h3 class="portfolio-card__title">Microventiladores AC/DC</h3>
+            <p class="portfolio-card__desc">Séries AC e DC para resfriamento de equipamentos elétricos, eletrônicos e industriais. Dimensões de 40mm a 172mm.</p>
+            <div class="portfolio-card__tags">
+              <span>AC</span><span>DC</span><span>40–172mm</span><span>110V/220V/24V/12V</span>
+            </div>
+            <span class="portfolio-card__link">Ver linha completa &rarr;</span>
+          </div>
+        </a>
+        <a href="axiais.html" class="portfolio-card">
+          <div class="portfolio-card__img">
+            <img src="assets/axiais-thumb.png" alt="Ventiladores Axiais">
+          </div>
+          <div class="portfolio-card__body">
+            <h3 class="portfolio-card__title">Ventiladores Axiais</h3>
+            <p class="portfolio-card__desc">Para vazões maiores em sistemas de ventilação industrial. 5 pás, disponíveis em 200mm, 250mm e 300mm.</p>
+            <div class="portfolio-card__tags">
+              <span>5 Pás</span><span>200–300mm</span><span>Alta Vazão</span>
+            </div>
+            <span class="portfolio-card__link">Ver linha completa &rarr;</span>
+          </div>
+        </a>
+        <a href="acessorios.html" class="portfolio-card">
+          <div class="portfolio-card__img">
+            <img src="assets/acessorios-thumb.png" alt="Acessórios e Módulos">
+          </div>
+          <div class="portfolio-card__body">
+            <h3 class="portfolio-card__title">Acessórios e Módulos</h3>
+            <p class="portfolio-card__desc">Grades metálicas, proteções plásticas e placas Peltier para complementar seu sistema de ventilação e resfriamento.</p>
+            <div class="portfolio-card__tags">
+              <span>Grades</span><span>Proteções</span><span>Peltier</span>
+            </div>
+            <span class="portfolio-card__link">Ver linha completa &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ASA FAN -->
+  <section class="why-section">
+    <div class="why-section__grid-pattern"></div>
+    <div class="container">
+      <h2 class="why-section__title">Por que especificar ASA Fan</h2>
+      <div class="why-section__grid">
+        <div class="why-card">
+          <div class="why-card__icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></svg>
+          </div>
+          <h3 class="why-card__label">25 anos</h3>
+          <p class="why-card__text">Pioneira em ventilação forçada no Brasil desde 1999</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+          </div>
+          <h3 class="why-card__label">Equipe própria</h3>
+          <p class="why-card__text">Auxílio técnico na especificação do produto certo para sua aplicação</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="why-card__label">Fabricação nacional</h3>
+          <p class="why-card__text">Produção e controle de qualidade em Cotia, SP</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card__icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
+          </div>
+          <h3 class="why-card__label">6+ grandes marcas</h3>
+          <p class="why-card__text">Homologados por Schindler, Mercedes-Benz, Schulz e outras</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-STEP PROCESS -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="steps-section__title">Simples de especificar, rápido de receber</h2>
+      <div class="steps-section__grid">
+        <div class="step-card">
+          <div class="step-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="step-card__line"></div>
+          <span class="step-card__label">Passo 1</span>
+          <h3 class="step-card__title">Escolha o modelo</h3>
+          <p class="step-card__desc">Navegue pelo catálogo com filtros por tensão, dimensão e tipo.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="step-card__line"></div>
+          <span class="step-card__label">Passo 2</span>
+          <h3 class="step-card__title">Solicite cotação</h3>
+          <p class="step-card__desc">Formulário direto com campo para código do produto ou especificação.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <span class="step-card__label">Passo 3</span>
+          <h3 class="step-card__title">Receba proposta</h3>
+          <p class="step-card__desc">Equipe técnica responde em até 1 dia útil com preço e prazo.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -141,8 +230,9 @@
   <!-- CTA -->
   <section class="cta-banner">
     <div class="container">
-      <h2 class="cta-banner__title">Precisa de ajuda com seu projeto?</h2>
-      <a href="fale-conosco.html" class="btn btn--red">Fale com nossa equipe</a>
+      <h2 class="cta-banner__title">Tem um projeto em andamento?</h2>
+      <p class="cta-banner__desc">Nosso time técnico ajuda você a especificar o ventilador certo. Sem compromisso.</p>
+      <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="btn btn--cta-outline"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar com especialista</a>
     </div>
   </section>
 
@@ -152,29 +242,37 @@
       <div class="footer__content">
         <div>
           <div class="footer__logo">
-            <img src="assets/logo.png" alt="ASAFAN">
+            <img src="assets/logo.png" alt="ASA Fan">
           </div>
-          <p class="footer__desc">Desde 1999, a ASAFAN é referência em ventilação forçada no Brasil. Importamos e distribuímos soluções completas em microventiladores, ventiladores axiais e acessórios para a indústria.</p>
+          <p class="footer__desc">Ventilação industrial com precisão desde 1999.</p>
         </div>
         <div>
           <h4 class="footer__title">Navegação</h4>
           <div class="footer__links">
             <a href="index.html">Home</a>
-            <a href="quem-somos.html">Quem Somos</a>
+            <a href="quem-somos.html">Sobre</a>
             <a href="produtos.html">Produtos</a>
-            <a href="fale-conosco.html">Fale Conosco</a>
-            <a href="carreira.html">Carreira</a>
+            <a href="fale-conosco.html">Cotação</a>
+            <a href="fale-conosco.html">Contato</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__title">Produtos</h4>
+          <div class="footer__links">
+            <a href="microventiladores.html">Microventiladores AC/DC</a>
+            <a href="axiais.html">Ventiladores Axiais</a>
+            <a href="acessorios.html">Acessórios</a>
           </div>
         </div>
         <div>
           <h4 class="footer__title">Contato</h4>
-          <p class="footer__contact-item">Rua Santa Mônica, 1130<br>Parque Industrial San Jose<br>Cotia/SP — CEP: 06715-865</p>
-          <p class="footer__contact-item">(11) 3406-5088<br>(11) 3406-5425<br>(11) 4617-7254</p>
+          <p class="footer__contact-item">R. Santa Mônica, 1130, Cotia/SP</p>
+          <p class="footer__contact-item">Tel: (11) 3406-5088</p>
           <p class="footer__contact-item">comercial@asafan.com.br</p>
         </div>
       </div>
       <div class="footer__bar">
-        &copy; 2025 ASAFAN — Adda South America Corporation. Todos os direitos reservados.
+        &copy; 2026 Adda South America Corporation. Todos os direitos reservados.
       </div>
     </div>
   </footer>
