@@ -3,3 +3,6 @@ assets_upgrade/
 .gstack/
 node_modules/
 sessions/
+raw_assets/
+project files/
+scripts/_*.html

@@ -78,624 +78,1054 @@
           <div class="filter-group">
             <h3 class="filter-group__title">Tipo</h3>
             <button class="filter-btn active" data-filter="tipo" data-value="all">Todos</button>
-            <button class="filter-btn" data-filter="tipo" data-value="micro-ac">Microventilador AC</button>
-            <button class="filter-btn" data-filter="tipo" data-value="micro-dc">Microventilador DC</button>
-            <button class="filter-btn" data-filter="tipo" data-value="axial">Axial</button>
-            <button class="filter-btn" data-filter="tipo" data-value="acessorio">Acessório</button>
+            <button class="filter-btn" data-filter="tipo" data-value="micro-ac">Microventiladores AC</button>
+            <button class="filter-btn" data-filter="tipo" data-value="micro-dc">Microventiladores DC</button>
+            <button class="filter-btn" data-filter="tipo" data-value="axial">Axiais</button>
+            <button class="filter-btn" data-filter="tipo" data-value="acessorio">Acessórios</button>
           </div>
-          <div class="filter-group">
+
+          <div class="filter-group" data-context="acessorio">
+            <h3 class="filter-group__title">Subcategoria</h3>
+            <button class="filter-btn active" data-filter="subtipo" data-value="all">Todas</button>
+            <button class="filter-btn" data-filter="subtipo" data-value="tela">Telas metálicas</button>
+            <button class="filter-btn" data-filter="subtipo" data-value="grelha">Grelhas ABS</button>
+            <button class="filter-btn" data-filter="subtipo" data-value="porta-filtro">Porta-filtros</button>
+            <button class="filter-btn" data-filter="subtipo" data-value="termostato">Termostatos</button>
+          </div>
+
+          <div class="filter-group" data-context="micro-ac micro-dc">
+            <h3 class="filter-group__title">Mancal</h3>
+            <button class="filter-btn active" data-filter="mancal" data-value="all">Todos</button>
+            <button class="filter-btn" data-filter="mancal" data-value="rolamento">Rolamento</button>
+            <button class="filter-btn" data-filter="mancal" data-value="bucha">Bucha</button>
+          </div>
+
+          <div class="filter-group" data-context="micro-dc">
             <h3 class="filter-group__title">Tensão</h3>
             <button class="filter-btn active" data-filter="tensao" data-value="all">Todas</button>
             <button class="filter-btn" data-filter="tensao" data-value="12v">12V</button>
             <button class="filter-btn" data-filter="tensao" data-value="24v">24V</button>
-            <button class="filter-btn" data-filter="tensao" data-value="110v">110V</button>
-            <button class="filter-btn" data-filter="tensao" data-value="220v">220V</button>
-            <button class="filter-btn" data-filter="tensao" data-value="bivolt">Bivolt</button>
+            <button class="filter-btn" data-filter="tensao" data-value="48v">48V</button>
+          </div>
+
+          <div class="filter-group" data-context="axial">
+            <h3 class="filter-group__title">Tensão</h3>
+            <button class="filter-btn active" data-filter="tensao" data-value="all">Todas</button>
+            <button class="filter-btn" data-filter="tensao" data-value="220v">220V (monofásico)</button>
+            <button class="filter-btn" data-filter="tensao" data-value="220v-380v">220V/380V (trifásico)</button>
+          </div>
+
+          <div class="filter-group" data-context="axial">
+            <h3 class="filter-group__title">Função</h3>
+            <button class="filter-btn active" data-filter="funcao" data-value="all">Todos</button>
+            <button class="filter-btn" data-filter="funcao" data-value="soprador">Soprador</button>
+            <button class="filter-btn" data-filter="funcao" data-value="exaustor">Exaustor</button>
           </div>
         </aside>
-
         <!-- PRODUCT GRID -->
         <div class="catalog__main">
-          <p class="catalog__count">46 produto(s) encontrado(s)</p>
+          <p class="catalog__count">77 produto(s) encontrado(s)</p>
           <div class="catalog__grid">
-
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/A201.jpeg" alt="Produto A201" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/a81.jpg" alt="Produto A81" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A81</p>
+            <h3 class="product-card__title">Microventilador AC 80×80×25mm</h3>
+            <p class="product-card__specs">8025B · Bivolt · Rolamento · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/E171.jpeg" alt="Produto E171" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/a82.jpg" alt="Produto A82" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A82</p>
+            <h3 class="product-card__title">Microventilador AC 80×80×38mm</h3>
+            <p class="product-card__specs">8038B · Bivolt · Rolamento · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/t30.jpeg" alt="Produto T30" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/a91.jpg" alt="Produto A91" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A91</p>
+            <h3 class="product-card__title">Microventilador AC 90×90×25mm</h3>
+            <p class="product-card__specs">9225B · Bivolt · Rolamento · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/T40.jpeg" alt="Produto T40" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/a121.jpg" alt="Produto A121" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A121</p>
+            <h3 class="product-card__title">Microventilador AC 120×120×25mm</h3>
+            <p class="product-card__specs">12025B · Bivolt · Rolamento · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/t41.jpeg" alt="Produto T41" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/a122.jpg" alt="Produto A122" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A122</p>
+            <h3 class="product-card__title">Microventilador AC 120×120×38mm</h3>
+            <p class="product-card__specs">12038B · Bivolt · Rolamento · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/X301.jpeg" alt="Produto X301" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/a123.jpg" alt="Produto A123" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A123</p>
+            <h3 class="product-card__title">Microventilador AC 120×120×38mm</h3>
+            <p class="product-card__specs">12038S · Bivolt · Bucha · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/X502.jpeg" alt="Produto X502" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/a171.jpg" alt="Produto A171" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A171</p>
+            <h3 class="product-card__title">Microventilador AC 172×150×53mm</h3>
+            <p class="product-card__specs">17251B · Bivolt · Rolamento · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083330_586.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/a201.jpg" alt="Produto A201" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">A201</p>
+            <h3 class="product-card__title">Microventilador AC 200×200×60mm</h3>
+            <p class="product-card__specs">20060B · Bivolt · Rolamento · 4 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083355_455.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto E122" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">E122</p>
+            <h3 class="product-card__title">Microventilador AC 120×120×38mm</h3>
+            <p class="product-card__specs">E12038B · Bivolt · Rolamento · 2 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083559_504.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-ac" data-tensao="bivolt" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/e171.jpg" alt="Produto E171" loading="lazy" style="object-position: center 75%;"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">E171</p>
+            <h3 class="product-card__title">Microventilador AC 172×150×53mm</h3>
+            <p class="product-card__specs">E17251B · Bivolt · Rolamento · 2 fios · Alumínio</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083617_849.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d41.jpg" alt="Produto D41" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D41</p>
+            <h3 class="product-card__title">Microventilador DC 40×40×20mm</h3>
+            <p class="product-card__specs">4020S-12 · 12V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083641_051.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d42.jpg" alt="Produto D42" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D42</p>
+            <h3 class="product-card__title">Microventilador DC 40×40×20mm</h3>
+            <p class="product-card__specs">4020B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083649_096.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d43.jpg" alt="Produto D43" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D43</p>
+            <h3 class="product-card__title">Microventilador DC 40×40×10mm</h3>
+            <p class="product-card__specs">4010B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083818_691.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d44.jpg" alt="Produto D44" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D44</p>
+            <h3 class="product-card__title">Microventilador DC 40×40×20mm</h3>
+            <p class="product-card__specs">4020S-24 · 24V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083914_586.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d51.jpg" alt="Produto D51" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D51</p>
+            <h3 class="product-card__title">Microventilador DC 50×50×10mm</h3>
+            <p class="product-card__specs">5010S-12 · 12V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083927_001CS.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d52.jpg" alt="Produto D52" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D52</p>
+            <h3 class="product-card__title">Microventilador DC 50×50×10mm</h3>
+            <p class="product-card__specs">5010B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_083927_002CS.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d61.jpg" alt="Produto D61" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D61</p>
+            <h3 class="product-card__title">Microventilador DC 60×60×25mm</h3>
+            <p class="product-card__specs">6025S-12 · 12V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_084815_123.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d62.jpg" alt="Produto D62" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D62</p>
+            <h3 class="product-card__title">Microventilador DC 60×60×25mm</h3>
+            <p class="product-card__specs">6025S-24 · 24V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_084838_168.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d63.jpg" alt="Produto D63" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D63</p>
+            <h3 class="product-card__title">Microventilador DC 60×60×25mm</h3>
+            <p class="product-card__specs">6025B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_084915_802.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d64.jpg" alt="Produto D64" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D64</p>
+            <h3 class="product-card__title">Microventilador DC 60×60×25mm</h3>
+            <p class="product-card__specs">6025B-24 · 24V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085125_491.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d65.jpg" alt="Produto D65" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D65</p>
+            <h3 class="product-card__title">Microventilador DC 60×60×10mm</h3>
+            <p class="product-card__specs">6010B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085208_781.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d66.png" alt="Produto D66" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D66</p>
+            <h3 class="product-card__title">Microventilador DC 60×60×15mm</h3>
+            <p class="product-card__specs">6015B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085236_048.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d67.jpg" alt="Produto D67" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D67</p>
+            <h3 class="product-card__title">Microventilador DC 60×60×20mm</h3>
+            <p class="product-card__specs">6020B-24 · 24V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085255_935.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d81.jpg" alt="Produto D81" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D81</p>
+            <h3 class="product-card__title">Microventilador DC 80×80×25mm</h3>
+            <p class="product-card__specs">8025S-12 · 12V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085308_079.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d82.jpg" alt="Produto D82" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D82</p>
+            <h3 class="product-card__title">Microventilador DC 80×80×25mm</h3>
+            <p class="product-card__specs">8025S-24 · 24V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085340_199.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d83.jpg" alt="Produto D83" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D83</p>
+            <h3 class="product-card__title">Microventilador DC 80×80×25mm</h3>
+            <p class="product-card__specs">8025B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085509_899.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d84.jpg" alt="Produto D84" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D84</p>
+            <h3 class="product-card__title">Microventilador DC 80×80×25mm</h3>
+            <p class="product-card__specs">8025B-24 · 24V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085558_475.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="48v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d85.jpg" alt="Produto D85" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D85</p>
+            <h3 class="product-card__title">Microventilador DC 80×80×25mm</h3>
+            <p class="product-card__specs">8025B-48 · 48V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085618_691.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d86.jpg" alt="Produto D86" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D86</p>
+            <h3 class="product-card__title">Microventilador DC 80×80×15mm</h3>
+            <p class="product-card__specs">8015B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085620_693.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d90.jpg" alt="Produto D90" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D90</p>
+            <h3 class="product-card__title">Microventilador DC 90×90×25mm</h3>
+            <p class="product-card__specs">9025B-24 · 24V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085651_897.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d91-2.jpg" alt="Produto D91/2" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D91/2</p>
+            <h3 class="product-card__title">Microventilador DC 90×90×25mm</h3>
+            <p class="product-card__specs">9025S-12/2 · 12V · Bucha · 2 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085714_012.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d121.jpg" alt="Produto D121" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D121</p>
+            <h3 class="product-card__title">Microventilador DC 120×120×25mm</h3>
+            <p class="product-card__specs">12025S-12 · 12V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085731_077.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="bucha">
+          <div class="product-card__img"><img src="assets/product/d122.png" alt="Produto D122" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D122</p>
+            <h3 class="product-card__title">Microventilador DC 120×120×25mm</h3>
+            <p class="product-card__specs">12025S-24 · 24V · Bucha · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085804_748.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d123.jpg" alt="Produto D123" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D123</p>
+            <h3 class="product-card__title">Microventilador DC 120×120×38mm</h3>
+            <p class="product-card__specs">12038B-24 · 24V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085839_383.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d124.jpg" alt="Produto D124" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D124</p>
+            <h3 class="product-card__title">Microventilador DC 120×120×25mm</h3>
+            <p class="product-card__specs">12025B-24 · 24V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085858_386.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="48v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d125.jpg" alt="Produto D125" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D125</p>
+            <h3 class="product-card__title">Microventilador DC 120×120×38mm</h3>
+            <p class="product-card__specs">12038B-48 · 48V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085915_641.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d126.jpg" alt="Produto D126" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D126</p>
+            <h3 class="product-card__title">Microventilador DC 120×120×38mm</h3>
+            <p class="product-card__specs">12038B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_085942_149.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="12v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d127.jpg" alt="Produto D127" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D127</p>
+            <h3 class="product-card__title">Microventilador DC 120×120×25mm</h3>
+            <p class="product-card__specs">12025B-12 · 12V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090031_250.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="24v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d171.jpg" alt="Produto D171" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D171</p>
+            <h3 class="product-card__title">Microventilador DC 172×150×51mm</h3>
+            <p class="product-card__specs">17251B-24 · 24V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090059_658.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="micro-dc" data-tensao="48v" data-mancal="rolamento">
+          <div class="product-card__img"><img src="assets/product/d172.jpg" alt="Produto D172" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">D172</p>
+            <h3 class="product-card__title">Microventilador DC 172×150×51mm</h3>
+            <p class="product-card__specs">17251B-48 · 48V · Rolamento · 3 fios · Nylon</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090119_001CS.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X201" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">X201</p>
+            <h3 class="product-card__title">Soprador Axial 200mm</h3>
+            <p class="product-card__specs">2E-200BC · 220V</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090206_474.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X202" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">X202</p>
+            <h3 class="product-card__title">Exaustor Axial 200mm</h3>
+            <p class="product-card__specs">2E-200SE · 220V</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090222_578.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X251" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">X251</p>
+            <h3 class="product-card__title">Soprador Axial 250mm</h3>
+            <p class="product-card__specs">2E-250BC · 220V</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090248_138.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X252" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">X252</p>
+            <h3 class="product-card__title">Exaustor Axial 250mm</h3>
+            <p class="product-card__specs">2E-250SE · 220V</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090308_430.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X253" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">X253</p>
+            <h3 class="product-card__title">Soprador Axial 250mm</h3>
+            <p class="product-card__specs">4E-250BC · 220V</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-card">
-          <div class="product-card__img"><img src="assets/product/IMG_20260409_090338_652.jpg" alt="Produto" loading="lazy"></div>
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/x301.jpg" alt="Produto X301" loading="lazy"></div>
           <div class="product-card__body">
-            <p class="product-card__sku">[Placeholder]</p>
-            <h3 class="product-card__title">[Placeholder]</h3>
-            <p class="product-card__specs">[Placeholder]</p>
+            <p class="product-card__sku">X301</p>
+            <h3 class="product-card__title">Soprador Axial 300mm</h3>
+            <p class="product-card__specs">2E-300BC · 220V</p>
             <div class="product-card__actions">
               <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
-        </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X302" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X302</p>
+            <h3 class="product-card__title">Exaustor Axial 300mm</h3>
+            <p class="product-card__specs">2E-300SE · 220V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X351" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X351</p>
+            <h3 class="product-card__title">Soprador Axial 350mm</h3>
+            <p class="product-card__specs">4E-350BC · 220V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X352" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X352</p>
+            <h3 class="product-card__title">Exaustor Axial 350mm</h3>
+            <p class="product-card__specs">4E-350SE · 220V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X353" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X353</p>
+            <h3 class="product-card__title">Soprador Axial 350mm</h3>
+            <p class="product-card__specs">4D-350BC · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X354" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X354</p>
+            <h3 class="product-card__title">Exaustor Axial 350mm</h3>
+            <p class="product-card__specs">4D-350SE · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X401" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X401</p>
+            <h3 class="product-card__title">Exaustor Axial 400mm</h3>
+            <p class="product-card__specs">4E-400SE · 220V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X402" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X402</p>
+            <h3 class="product-card__title">Soprador Axial 400mm</h3>
+            <p class="product-card__specs">4D-400BC · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X403" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X403</p>
+            <h3 class="product-card__title">Exaustor Axial 400mm</h3>
+            <p class="product-card__specs">4D-400SE · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X404" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X404</p>
+            <h3 class="product-card__title">Soprador Axial 400mm</h3>
+            <p class="product-card__specs">4E-400BC · 220V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X451" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X451</p>
+            <h3 class="product-card__title">Soprador Axial 450mm</h3>
+            <p class="product-card__specs">4E-450BC · 220V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X452" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X452</p>
+            <h3 class="product-card__title">Exaustor Axial 450mm</h3>
+            <p class="product-card__specs">4E-450SE · 220V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X453" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X453</p>
+            <h3 class="product-card__title">Exaustor Axial 450mm</h3>
+            <p class="product-card__specs">4D-450SE · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X454" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X454</p>
+            <h3 class="product-card__title">Soprador Axial 450mm</h3>
+            <p class="product-card__specs">4D-450BC · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="soprador">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto X501" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X501</p>
+            <h3 class="product-card__title">Soprador Axial 500mm</h3>
+            <p class="product-card__specs">4D-500BC · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="axial" data-tensao="220v-380v" data-funcao="exaustor">
+          <div class="product-card__img"><img src="assets/product/x502.jpg" alt="Produto X502" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">X502</p>
+            <h3 class="product-card__title">Exaustor Axial 500mm</h3>
+            <p class="product-card__specs">4D-500SE · 220V/380V</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="tela">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto M40" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">M40</p>
+            <h3 class="product-card__title">Tela Metálica 40×40mm</h3>
+            <p class="product-card__specs">Arame · Cromada</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="tela">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto M60" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">M60</p>
+            <h3 class="product-card__title">Tela Metálica 58×58mm</h3>
+            <p class="product-card__specs">Arame · Cromada</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="tela">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto M80" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">M80</p>
+            <h3 class="product-card__title">Tela Metálica 80×80mm</h3>
+            <p class="product-card__specs">Arame · Cromada</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="tela">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto M90" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">M90</p>
+            <h3 class="product-card__title">Tela Metálica 90×90mm</h3>
+            <p class="product-card__specs">Arame · Preto</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="tela">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto M120" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">M120</p>
+            <h3 class="product-card__title">Tela Metálica 116×116mm</h3>
+            <p class="product-card__specs">Arame · Cromada</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="tela">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto M150" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">M150</p>
+            <h3 class="product-card__title">Tela Metálica 170×154mm</h3>
+            <p class="product-card__specs">Arame · Cromada</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="tela">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto M200" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">M200</p>
+            <h3 class="product-card__title">Tela Metálica 200×200mm</h3>
+            <p class="product-card__specs">Arame · Cromada</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="grelha">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto G60" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">G60</p>
+            <h3 class="product-card__title">Grelha ABS 60×60mm</h3>
+            <p class="product-card__specs">ABS · Bege</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="grelha">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto G150" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">G150</p>
+            <h3 class="product-card__title">Grelha ABS 150×150mm</h3>
+            <p class="product-card__specs">ABS · Bege</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="grelha">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto G203" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">G203</p>
+            <h3 class="product-card__title">Grelha ABS 203×203mm</h3>
+            <p class="product-card__specs">ABS · Bege</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="porta-filtro">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto P80" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">P80</p>
+            <h3 class="product-card__title">Porta-filtro 80×80mm</h3>
+            <p class="product-card__specs">Plástico · Preto</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="porta-filtro">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto P90" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">P90</p>
+            <h3 class="product-card__title">Porta-filtro 90×90mm</h3>
+            <p class="product-card__specs">Plástico · Preto</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="porta-filtro">
+          <div class="product-card__img"><img src="assets/product/placeholder.png" alt="Produto P120" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">P120</p>
+            <h3 class="product-card__title">Porta-filtro 120×120mm</h3>
+            <p class="product-card__specs">Plástico · Preto</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="termostato" data-tensao="12v">
+          <div class="product-card__img"><img src="assets/product/t40.jpg" alt="Produto T40" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">T40</p>
+            <h3 class="product-card__title">Termostato 40×40mm</h3>
+            <p class="product-card__specs">12V · 6A</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="termostato" data-tensao="12v">
+          <div class="product-card__img"><img src="assets/product/t41.jpg" alt="Produto T41" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">T41</p>
+            <h3 class="product-card__title">Termostato 40×40mm</h3>
+            <p class="product-card__specs">12V · 4A</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-tipo="acessorio" data-subtipo="termostato" data-tensao="12v">
+          <div class="product-card__img"><img src="assets/product/t30.jpg" alt="Produto T30" loading="lazy"></div>
+          <div class="product-card__body">
+            <p class="product-card__sku">T30</p>
+            <h3 class="product-card__title">Termostato 30×30mm</h3>
+            <p class="product-card__specs">12V · 5A</p>
+            <div class="product-card__actions">
+              <a href="fale-conosco.html" class="product-card__btn product-card__btn--outline">Especificações</a>
+              <a href="https://wa.me/551134065088?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+            </div>
+          </div>
+        </article>
 
           </div>
         </div>
