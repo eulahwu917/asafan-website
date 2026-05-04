@@ -78,11 +78,21 @@ def tensao_slug(voltagem):
     return ''
 
 
+IMG_STYLE_OVERRIDES = {
+    # Per-código <img> style. Use when object-fit: cover crops badly on a specific photo.
+    'E171': 'object-position: center 75%;',  # portrait shot — keep fan body visible
+}
+
+
 def card(data_attrs, img_src, sku, title, specs, alt=None):
     attrs = ' '.join(f'{k}="{v}"' for k, v in data_attrs.items() if v)
     alt = alt or f'Produto {sku}'
+    style_attr = ''
+    override = IMG_STYLE_OVERRIDES.get(sku)
+    if override:
+        style_attr = f' style="{override}"'
     return f'''        <article class="product-card" {attrs}>
-          <div class="product-card__img"><img src="{img_src}" alt="{html.escape(alt)}" loading="lazy"></div>
+          <div class="product-card__img"><img src="{img_src}" alt="{html.escape(alt)}" loading="lazy"{style_attr}></div>
           <div class="product-card__body">
             <p class="product-card__sku">{html.escape(sku)}</p>
             <h3 class="product-card__title">{html.escape(title)}</h3>
