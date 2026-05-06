@@ -79,41 +79,6 @@ CARREIRA (/carreira)
 
 ---
 
-## PAGE: MICROVENTILADORES (microventiladores.html)
-**Title:** ASAFAN - MICROVENTILADORES
-
-### Product Spec Sheets (images)
-1. micro-a81-a91.png (alt: a81 - a91)
-2. micro-sem-titulo.png (alt: Sem titulo)
-3. micro-d41-d52.png (alt: d41- d52)
-4. micro-d61-d85.png (alt: D61-D85)
-5. micro-d91-d127.png (alt: D91-2 - D127)
-6. micro-d171.png (alt: D171)
-
----
-
-## PAGE: AXIAIS (axiais.html)
-**Title:** ASAFAN - AXIAIS
-
-### Product Spec Sheets (images)
-1. axiais-1.png (Screen Shot 2017-07-14 at 10.03.02 AM)
-2. axiais-2.png (dcc7f281...)
-3. axiais-x401-x454.png (X401 -X454)
-4. axiais-4.png (Screen Shot 2017-07-14 at 10.04.02 AM)
-5. axiais-5.png (Screen Shot 2017-07-14 at 10.04.17 AM)
-6. axiais-6.png (Screen Shot 2017-07-14 at 10.04.25 AM)
-
----
-
-## PAGE: ACESSORIOS (acessorios.html)
-**Title:** ASAFAN - ACESSORIOS
-
-### Product Spec Sheets (images)
-1. acessorios-1.png (Screen Shot 2017-07-14 at 9.49.33 AM)
-2. acessorios-2.png (Screen Shot 2017-07-14 at 10.09.43 AM)
-
----
-
 ## PAGE: FALE CONOSCO (fale-conosco.html)
 **Title:** ASAFAN - FALE CONOSCO
 

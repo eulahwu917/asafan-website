@@ -1,3 +1,88 @@
+// Product image carousel — cross-fade, no auto-advance. Hides controls when one slide.
+document.addEventListener('DOMContentLoaded', function() {
+  var carousel = document.querySelector('.product-detail__carousel');
+  if (!carousel) return;
+
+  var slides = carousel.querySelectorAll('.product-detail__slide');
+  var dots = carousel.querySelectorAll('.product-detail__dot');
+  var prevBtn = carousel.querySelector('.product-detail__nav--prev');
+  var nextBtn = carousel.querySelector('.product-detail__nav--next');
+  var dotsWrap = carousel.querySelector('.product-detail__dots');
+
+  if (slides.length <= 1) {
+    if (prevBtn) prevBtn.style.display = 'none';
+    if (nextBtn) nextBtn.style.display = 'none';
+    if (dotsWrap) dotsWrap.style.display = 'none';
+    return;
+  }
+
+  var current = 0;
+  function goTo(idx) {
+    current = (idx + slides.length) % slides.length;
+    slides.forEach(function(s, i) { s.classList.toggle('is-active', i === current); });
+    dots.forEach(function(d, i) {
+      var active = i === current;
+      d.classList.toggle('is-active', active);
+      d.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+  if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
+  if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function() { goTo(i); });
+  });
+});
+
+// Hero carousel — cross-fade with auto-advance, dots, prev/next, pause on hover
+document.addEventListener('DOMContentLoaded', function() {
+  var carousel = document.querySelector('.hero__carousel');
+  if (!carousel) return;
+
+  var slides = carousel.querySelectorAll('.hero__slide');
+  var dots = carousel.querySelectorAll('.hero__dot');
+  var prevBtn = carousel.querySelector('.hero__nav--prev');
+  var nextBtn = carousel.querySelector('.hero__nav--next');
+  if (slides.length <= 1) {
+    if (prevBtn) prevBtn.style.display = 'none';
+    if (nextBtn) nextBtn.style.display = 'none';
+    if (dots.length) dots.forEach(function(d) { d.style.display = 'none'; });
+    return;
+  }
+
+  var current = 0;
+  var timer = null;
+  var DELAY = 6000;
+
+  function goTo(idx) {
+    current = (idx + slides.length) % slides.length;
+    slides.forEach(function(s, i) { s.classList.toggle('is-active', i === current); });
+    dots.forEach(function(d, i) {
+      var active = i === current;
+      d.classList.toggle('is-active', active);
+      d.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function start() { stop(); timer = setInterval(next, DELAY); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  if (nextBtn) nextBtn.addEventListener('click', function() { next(); start(); });
+  if (prevBtn) prevBtn.addEventListener('click', function() { prev(); start(); });
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function() { goTo(i); start(); });
+  });
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+
+  start();
+});
+
 // Mobile menu toggle
 function toggleMenu() {
   var nav = document.getElementById('mainNav');
@@ -15,12 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Product catalog filters — two-tier tipo + contextual secondary filters
+// Product catalog filters — two-tier tipo + contextual secondary filters.
+// Supports URL preselect via ?tipo=micro-ac|micro-dc|axial|acessorio.
 document.addEventListener('DOMContentLoaded', function() {
   var filterBtns = document.querySelectorAll('.filter-btn');
   if (!filterBtns.length) return;
 
-  // Get currently active value for a filter name; only reads from visible groups.
   function activeValue(name) {
     var groups = document.querySelectorAll('.filter-group');
     for (var i = 0; i < groups.length; i++) {
@@ -32,18 +117,12 @@ document.addEventListener('DOMContentLoaded', function() {
     return 'all';
   }
 
-  // Show/hide filter groups based on the current tipo.
-  // A group without data-context is always visible.
-  // A group with data-context="x y z" is visible if tipo is 'all' matches x/y/z... actually:
-  // spec: groups show when the selected tipo is in their context list. When tipo='all',
-  // only the primary Tipo group is shown (all secondary groups hidden since they don't apply globally).
   function syncGroupVisibility(tipo) {
     document.querySelectorAll('.filter-group[data-context]').forEach(function(g) {
       var ctx = g.getAttribute('data-context').split(/\s+/);
       var show = ctx.indexOf(tipo) >= 0;
       g.classList.toggle('is-hidden', !show);
       if (!show) {
-        // Reset this group's active button to 'all' so hidden filters don't contribute
         g.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
         var allBtn = g.querySelector('.filter-btn[data-value="all"]');
         if (allBtn) allBtn.classList.add('active');
@@ -86,8 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      // Toggle active within the same .filter-group (scope to the parent group so sibling
-      // groups sharing a data-filter name — e.g. two "tensao" groups — don't interfere).
       var parentGroup = btn.closest('.filter-group');
       if (parentGroup) {
         parentGroup.querySelectorAll('.filter-btn').forEach(function(b) {
@@ -99,7 +176,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Initial state
+  // Pre-select from ?tipo= URL param so links from index/header land on a filtered view.
+  var tipoParam = new URLSearchParams(location.search).get('tipo');
+  if (tipoParam) {
+    var preselect = document.querySelector('.filter-btn[data-filter="tipo"][data-value="' + tipoParam + '"]');
+    if (preselect) {
+      document.querySelectorAll('.filter-btn[data-filter="tipo"]').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      preselect.classList.add('active');
+    }
+  }
+
   applyFilters();
 });
 
