@@ -34,7 +34,7 @@ import urllib.parse
 
 import openpyxl
 
-XLSX = 'raw_assets/product_site/dados para site.xlsx'
+XLSX = 'raw_assets/0520/dados para site.xlsx'
 ASSETS = pathlib.Path('assets/product')
 PRODUTO_DIR = pathlib.Path('produto')
 OUT_CARDS = pathlib.Path('scripts/_generated_cards.html')
@@ -127,7 +127,6 @@ def voltagem_display(voltagem):
 
 # Per-código <img> style overrides on the catalog card, when default crop is bad.
 IMG_STYLE_OVERRIDES = {
-    'E171': 'object-position: center 75%;',  # portrait shot — keep fan body visible
 }
 
 
@@ -215,7 +214,7 @@ def collect_records(ws):
 
     # Axiais — rows 44-64 (indices 43-63)
     for r in rows[43:64]:
-        _, codigo, modelo, voltagem, dimensao, funcao, *_rest = r
+        _, codigo, modelo, voltagem, dimensao, funcao, pas, carcaca, vida = r
         if not codigo:
             continue
         funcao_l = funcao.lower() if funcao else ''
@@ -242,6 +241,9 @@ def collect_records(ws):
                 ('Voltagem', voltagem),
                 ('Dimensão', dimensao),
                 ('Função', cap(funcao)),
+                ('Pás', pas.lower() if pas else ''),
+                ('Carcaça', cap(carcaca)),
+                ('Vida útil', vida.strip() if vida else ''),
             ],
         })
 
