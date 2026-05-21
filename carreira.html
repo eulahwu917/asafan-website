@@ -44,7 +44,7 @@
         <a href="index.html">Home</a>
         <a href="quem-somos.html">Sobre</a>
         <div class="nav-dropdown">
-          <a href="produtos.html">Produtos</a>
+          <a href="produtos.html" aria-haspopup="true" aria-expanded="false">Produtos</a>
           <div class="nav-dropdown__menu">
             <a href="produtos.html">Microventiladores</a>
             <a href="produtos.html?tipo=axial">Axiais</a>
@@ -150,6 +150,12 @@
             <div class="form__group">
               <label class="form__label" for="career-complementares">Informações Complementares</label>
               <textarea class="form__textarea" id="career-complementares" name="complementares" placeholder="Outras informações relevantes..."></textarea>
+            </div>
+            <div class="form__group form__group--consent">
+              <label class="form__consent" for="career-lgpd">
+                <input type="checkbox" id="career-lgpd" name="lgpd" required>
+                <span>Autorizo a ASA Fan a tratar meus dados pessoais para fins de processo seletivo, em conformidade com a Lei Geral de Proteção de Dados (LGPD nº 13.709/2018). <span class="required">*</span></span>
+              </label>
             </div>
             <button type="submit" class="btn btn--primary" style="width:100%">Enviar Candidatura</button>
           </form>

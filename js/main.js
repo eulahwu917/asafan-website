@@ -100,6 +100,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Sync aria-expanded on nav dropdown so AT announcements reflect actual state.
+// CSS opens the menu on :hover/:focus-within; we mirror that to ARIA here.
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    var trigger = dd.querySelector('[aria-haspopup="true"]');
+    if (!trigger) return;
+    function open() { trigger.setAttribute('aria-expanded', 'true'); }
+    function close() { trigger.setAttribute('aria-expanded', 'false'); }
+    dd.addEventListener('mouseenter', open);
+    dd.addEventListener('mouseleave', close);
+    dd.addEventListener('focusin', open);
+    dd.addEventListener('focusout', function(e) {
+      if (!dd.contains(e.relatedTarget)) close();
+    });
+  });
+});
+
 // Product catalog filters — two-tier tipo + contextual secondary filters.
 // Supports URL preselect via ?tipo=micro-ac|micro-dc|axial|acessorio.
 document.addEventListener('DOMContentLoaded', function() {
@@ -222,10 +239,6 @@ function handleCareerForm(e) {
   var body = encodeURIComponent(
     'Nome: ' + data.get('nome') + '\n' +
     'Data de Nascimento: ' + data.get('nascimento') + '\n' +
-    'Gênero: ' + data.get('genero') + '\n' +
-    'Estado Civil: ' + (data.get('estado_civil') || '-') + '\n' +
-    'CPF: ' + data.get('cpf') + '\n' +
-    'Endereço: ' + data.get('endereco') + '\n' +
     'E-mail: ' + data.get('email') + '\n' +
     'Telefone: ' + data.get('telefone') + '\n' +
     'Cargo de Interesse: ' + data.get('cargo') + '\n' +

@@ -394,7 +394,12 @@ def card_html(rec):
         'data-funcao': rec['funcao_slug'],
     }
     attrs = ' '.join(f'{k}="{v}"' for k, v in data_attrs.items() if v)
-    alt = f'Produto {sku}'
+    alt = f'{sku} — {rec["title"]}'
+    wa_msg = (
+        f'Olá! Gostaria de solicitar uma cotação para o produto '
+        f'{sku} ({rec["title"]}).'
+    )
+    wa_href = f'https://wa.me/{WA_PHONE}?text=' + urllib.parse.quote(wa_msg)
     return f'''        <article class="product-card" {attrs}>
           <div class="product-card__img"><img src="{img_src}" alt="{html.escape(alt)}" loading="lazy"{style_attr}></div>
           <div class="product-card__body">
@@ -402,7 +407,7 @@ def card_html(rec):
             <h3 class="product-card__title">{html.escape(rec["title"])}</h3>
             <div class="product-card__actions">
               <a href="{detail_href}" class="product-card__btn product-card__btn--outline">Especificações</a>
-              <a href="{WA_GENERIC_HREF}" target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
+              <a href="{wa_href}" target="_blank" rel="noopener noreferrer" class="product-card__btn product-card__btn--red">Cotação</a>
             </div>
           </div>
         </article>'''
@@ -536,7 +541,7 @@ def detail_page_html(rec):
         <a href="../index.html">Home</a>
         <a href="../quem-somos.html">Sobre</a>
         <div class="nav-dropdown">
-          <a href="../produtos.html" class="active">Produtos</a>
+          <a href="../produtos.html" class="active" aria-haspopup="true" aria-expanded="false">Produtos</a>
           <div class="nav-dropdown__menu">
             <a href="../produtos.html">Microventiladores</a>
             <a href="../produtos.html?tipo=axial">Axiais</a>

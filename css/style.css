@@ -388,8 +388,8 @@ ul { list-style: none; }
 
 .hero__stats {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   justify-content: center;
 }
 
@@ -1460,6 +1460,29 @@ ul { list-style: none; }
 .form__textarea {
   min-height: 120px;
   resize: vertical;
+}
+
+.form__group--consent {
+  margin-top: 16px;
+}
+
+.form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.form__consent input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--primary);
+  cursor: pointer;
 }
 
 .form__row {
