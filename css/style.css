@@ -15,7 +15,7 @@
   --white: #FFFFFF;
   --text: #2D3142;
   --text-light: #6B7186;
-  --text-muted: #9CA0B0;
+  --text-muted: #6B7186;
   --border: #E2E5EB;
   --steel: #8B92B0;
   --success: #0D7C3E;
@@ -63,6 +63,28 @@ ul { list-style: none; }
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* ===== SKIP LINK (a11y) ===== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  z-index: 10001;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ===== HEADER ===== */
@@ -691,6 +713,12 @@ ul { list-style: none; }
 .filter-btn:hover {
   background: var(--white);
   border-color: var(--border);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  background: var(--white);
 }
 
 .filter-btn.active {

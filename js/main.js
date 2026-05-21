@@ -23,7 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     dots.forEach(function(d, i) {
       var active = i === current;
       d.classList.toggle('is-active', active);
-      d.setAttribute('aria-selected', active ? 'true' : 'false');
+      if (active) {
+        d.setAttribute('aria-current', 'true');
+      } else {
+        d.removeAttribute('aria-current');
+      }
     });
   }
   if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
@@ -59,7 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
     dots.forEach(function(d, i) {
       var active = i === current;
       d.classList.toggle('is-active', active);
-      d.setAttribute('aria-selected', active ? 'true' : 'false');
+      if (active) {
+        d.setAttribute('aria-current', 'true');
+      } else {
+        d.removeAttribute('aria-current');
+      }
     });
   }
 

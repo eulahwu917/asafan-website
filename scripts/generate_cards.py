@@ -464,8 +464,9 @@ def detail_page_html(rec):
     for i in range(len(all_images)):
         active_cls = ' is-active' if i == 0 else ''
         sel = 'true' if i == 0 else 'false'
+        dot_attrs = ' aria-current="true"' if i == 0 else ''
         dot_blocks.append(
-            f'              <button class="product-detail__dot{active_cls}" type="button" role="tab" aria-selected="{sel}" aria-label="Imagem {i + 1}"></button>'
+            f'              <button class="product-detail__dot{active_cls}" type="button"{dot_attrs} aria-label="Imagem {i + 1}"></button>'
         )
     dots_html = '\n'.join(dot_blocks)
 
@@ -593,7 +594,7 @@ def detail_page_html(rec):
             <button class="product-detail__nav product-detail__nav--next" type="button" aria-label="Próxima imagem">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
-            <div class="product-detail__dots" role="tablist" aria-label="Selecionar imagem">
+            <div class="product-detail__dots" aria-label="Selecionar imagem">
 {dots_html}
             </div>
           </div>
@@ -623,7 +624,7 @@ def detail_page_html(rec):
             <a href="../index.html">Home</a>
             <a href="../quem-somos.html">Sobre</a>
             <a href="../produtos.html">Produtos</a>
-            <a href="../fale-conosco.html">Cotação</a>
+            <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer">Cotação</a>
             <a href="../fale-conosco.html">Contato</a>
           </div>
         </div>
@@ -660,11 +661,15 @@ def detail_page_html(rec):
         '  </script>'
     )
 
+    skip_link = '  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>'
     return (
-        head + '\n<body>\n\n'
+        head + '\n<body>\n'
+        + skip_link + '\n\n'
         + header_block + '\n\n'
+        + '  <main id="main-content">\n\n'
         + breadcrumb_block + '\n\n'
         + detail_block + '\n\n'
+        + '  </main>\n\n'
         + footer_block + '\n\n'
         + scripts_block + '\n\n'
         + '</body>\n</html>\n'
