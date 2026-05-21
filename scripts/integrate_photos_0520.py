@@ -18,9 +18,11 @@ Tela SKU rename (per customer 2026-05-20 xlsx update):
                            xlsx also changed color from preto to cromada)
 
 Cover-photo convention (`fotos de capa_/`):
-  Filenames matching `<base> (N).<ext>` → `<base>-N.jpg` (carousel slide N).
-  Filenames without `(N)` → `<base>-2.jpg` (cover assumed to be second slide;
-  the FOTOS FUNDO BRANCO copy is the primary).
+  These are full-width marketing banners ("Desempenho que resiste ao frio"
+  cold-performance campaign), one per product model. They go in the homepage
+  hero carousel, not per-product detail pages. Target filename:
+  `assets/hero-carousel/cold-<slug>.jpg`. Any `(N)` suffix in the source is
+  stripped (e.g. `A122 (2).png` → `cold-a122.jpg`).
 """
 import pathlib
 import re
@@ -31,7 +33,9 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC_DIR = ROOT / 'raw_assets' / '0520'
 DST_DIR = ROOT / 'assets' / 'product'
+HERO_DIR = ROOT / 'assets' / 'hero-carousel'
 MAX_DIM = 1200
+HERO_MAX_DIM = 1600
 JPG_QUALITY = 85
 
 # Source-stem → target-stem (lowercase). Applied only on FOTOS FUNDO BRANCO files.
@@ -41,7 +45,7 @@ RENAME = {
 }
 
 
-def process_image(src_path: pathlib.Path, dst_path: pathlib.Path) -> int:
+def process_image(src_path: pathlib.Path, dst_path: pathlib.Path, max_dim: int = MAX_DIM) -> int:
     """Open, composite-on-white if needed, resize, save as JPG. Returns bytes written."""
     with Image.open(src_path) as img:
         if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
@@ -53,8 +57,8 @@ def process_image(src_path: pathlib.Path, dst_path: pathlib.Path) -> int:
             img = img.convert('RGB')
 
         w, h = img.size
-        if max(w, h) > MAX_DIM:
-            ratio = MAX_DIM / max(w, h)
+        if max(w, h) > max_dim:
+            ratio = max_dim / max(w, h)
             img = img.resize((int(w * ratio), int(h * ratio)), Image.LANCZOS)
 
         img.save(dst_path, 'JPEG', quality=JPG_QUALITY, optimize=True, progressive=True)
@@ -74,20 +78,24 @@ def integrate_primary(primary_dir: pathlib.Path, results: list):
 
 
 def integrate_capa(capa_dir: pathlib.Path, results: list):
-    """fotos de capa_: become slide N of the carousel (default N=2)."""
+    """fotos de capa_: full-bleed cold-performance marketing banners.
+
+    These go into assets/hero-carousel/ as cold-<slug>.jpg (1600px-wide JPG,
+    higher resolution than product photos since they're displayed full-width
+    on the homepage). The (N) suffix in source filenames is stripped — it was
+    photographer's pagination, not a slide ordinal we care about here.
+    """
     if not capa_dir.exists():
         return
+    HERO_DIR.mkdir(parents=True, exist_ok=True)
     for src in sorted(capa_dir.iterdir()):
         if src.suffix.lower() not in ('.png', '.jpg', '.jpeg'):
             continue
         stem = src.stem
-        m = re.match(r'^(.+?)\s*\((\d+)\)\s*$', stem)
-        if m:
-            base, n = m.group(1).strip().lower(), int(m.group(2))
-        else:
-            base, n = stem.strip().lower(), 2
-        dst = DST_DIR / f'{base}-{n}.jpg'
-        size = process_image(src, dst)
+        m = re.match(r'^(.+?)\s*\(\d+\)\s*$', stem)
+        base = (m.group(1) if m else stem).strip().lower()
+        dst = HERO_DIR / f'cold-{base}.jpg'
+        size = process_image(src, dst, max_dim=HERO_MAX_DIM)
         results.append(('capa', src.name, dst.name, size))
 
 
