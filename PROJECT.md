@@ -1,6 +1,6 @@
 # ASA Fan Website
 
-Static marketing + product-catalog site for **ASA Fan** (Adda South America Corporation), a Brazilian manufacturer of microventiladores AC/DC, ventiladores axiais, and acessórios (telas, grelhas, porta-filtros, termostatos). Founded 1999, based in Cotia/SP.
+Static marketing + product-catalog site for **ASA Fan** (Adda South America Corporation), a Brazilian manufacturer of microventiladores AC/DC, ventiladores axiais, and acessórios (telas, grelhas, porta-filtros, termostatos). Products are manufactured in China; QA and distribution operate from Cotia/SP. Founded 1999.
 
 - **Live:** https://eulahwu917.github.io/asafan-website/
 - **Hosting:** GitHub Pages (auto-deploys from `main`)
@@ -54,14 +54,14 @@ Source of truth: **`raw_assets/product_site/dados para site.xlsx`** (sheet `Plan
 2. Per-product detail pages in [produto/](produto/) — one `<slug>.html` per SKU.
 3. Product URL block in [sitemap.xml](sitemap.xml) (between `BEGIN/END: product detail pages` markers).
 
-77 products grouped by SKU prefix:
+76 products grouped by SKU prefix:
 
 | Prefix | Tipo | Count |
 |---|---|---|
 | `A`, `E` | Microventilador AC (110V/220V/bivolt) | 10 |
 | `D` | Microventilador DC (12V/24V/48V) | 30 |
-| `X` | Axial (soprador/exaustor, 220V mono / 220V-380V tri) | 21 |
-| `M` | Telas/máscaras metálicas | 7 |
+| `X` | Axial (soprador/exaustor, 220V mono / 220V-380V tri) | 20 |
+| `M`, `3` | Telas/máscaras metálicas | 7 |
 | `G` | Grelhas ABS | 3 |
 | `P` | Porta-filtros | 3 |
 | `T` | Termostatos | 3 |
@@ -98,13 +98,14 @@ Source of truth: **`raw_assets/product_site/dados para site.xlsx`** (sheet `Plan
 
 Carried across sessions, priority-ordered:
 
-1. **Photographer punch-list (16 códigos still on placeholder)** — see [sessions/2026-05-04-photo-update.md](sessions/2026-05-04-photo-update.md) for the table. E122 + 12 axiais (X201-X454 minus those covered by group shots) + M80, M90, M200.
-2. **New SKUs in 2026-05-04 drop not yet in xlsx** — 3 porta-filtros (P40/P50/P60), ~13 telas (3xxxP series), ~10 axiais (4xxxA/5xxxA series). Customer to confirm which are catalog additions, then append rows to `dados para site.xlsx` and re-run integration scripts.
-3. **Image consistency** — product photos have varied environmental backgrounds; standardize to white-bg cutouts or compress.
+1. **New SKUs in 0521 drop not yet in xlsx** — 3 porta-filtros (P40/P50/P60), ~5 telas (3010P/3018P/3023P/3024P/3025P), grelhas G70/G3612, ~10 axiais (4070A/4071A/4572A/5071A/5073A series). Customer to confirm catalog additions; append rows to `dados para site.xlsx` and re-run `generate_cards.py --apply`.
+2. **A123 photo** — still a high-res phone shot (704 KB, 2160×2114) without a white-bg version in any photo drop. Schedule reshoot or downsize.
+3. **Category landing pages** still placeholder: microventiladores.html, axiais.html, acessorios.html.
 4. **Forms** — replace `mailto:` with Formspree or a tiny PHP/Functions endpoint.
 5. **Hero video compression** (`assets/video/hero-video.mp4` ≈ 4 MB at 1280×720).
 6. **Empty `sameAs`** in Organization JSON-LD — populate when social URLs exist.
-7. **Per-SKU `object-position`** — currently inline on E171 (managed via `IMG_STYLE_OVERRIDES` in `generate_cards.py`). If more photos need cropping tweaks, add them to that dict.
+7. **`generate_cards.py` section-row brittleness** — slices are hardcoded (e.g. `rows[43:64]` for axiais). Deleting an xlsx row shifts everything below and breaks downstream slices. Workaround: blank cells in-place instead of deleting rows. Real fix: dynamic section detection via the "CÓD" separator rows.
+8. **Per-SKU `object-position`** — currently empty (`IMG_STYLE_OVERRIDES = {}` in `generate_cards.py`). Add codes here if individual photos crop badly.
 
 ## Where to look
 
