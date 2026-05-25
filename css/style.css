@@ -1553,6 +1553,31 @@ ul { list-style: none; }
   display: block;
 }
 
+.form__error {
+  display: none;
+  background: #FBE9E9;
+  color: var(--red);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--red);
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form__error.show {
+  display: block;
+}
+
+.form__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--surface-dark);

@@ -216,48 +216,121 @@ document.addEventListener('DOMContentLoaded', function() {
   applyFilters();
 });
 
-// Contact form handler
+// Submits a form to /submit.php and updates the inline success/error elements.
+function submitForm(form, type, successId, errorId) {
+  var data = new FormData(form);
+  data.append('type', type);
+
+  var button = form.querySelector('button[type="submit"]');
+  var originalText = button ? button.textContent : '';
+  var successEl = document.getElementById(successId);
+  var errorEl = document.getElementById(errorId);
+
+  if (successEl) successEl.classList.remove('show');
+  if (errorEl) errorEl.classList.remove('show');
+  if (button) {
+    button.disabled = true;
+    button.textContent = 'Enviando...';
+  }
+
+  fetch('/submit.php', { method: 'POST', body: data })
+    .then(function (resp) {
+      return resp.json().then(function (json) {
+        return { status: resp.status, json: json };
+      });
+    })
+    .then(function (result) {
+      if (result.json && result.json.ok) {
+        if (successEl) successEl.classList.add('show');
+        form.reset();
+      } else {
+        var msg = (result.json && result.json.error)
+          ? result.json.error
+          : 'Erro ao enviar mensagem. Tente novamente em instantes.';
+        if (errorEl) {
+          errorEl.textContent = msg;
+          errorEl.classList.add('show');
+        }
+      }
+    })
+    .catch(function () {
+      if (errorEl) {
+        errorEl.textContent = 'Falha de conexao. Verifique sua internet e tente novamente.';
+        errorEl.classList.add('show');
+      }
+    })
+    .finally(function () {
+      if (button) {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    });
+}
+
+// Contact form handler — fale-conosco.html
 function handleContactForm(e) {
   e.preventDefault();
-  var form = e.target;
-  var data = new FormData(form);
-
-  // Build mailto link as fallback (static site on shared hosting)
-  var subject = encodeURIComponent('Contato via Site - ' + data.get('nome'));
-  var body = encodeURIComponent(
-    'Nome: ' + data.get('nome') + '\n' +
-    'Telefone: ' + data.get('telefone') + '\n' +
-    'E-mail: ' + data.get('email') + '\n\n' +
-    'Mensagem:\n' + (data.get('mensagem') || '(sem mensagem)')
-  );
-  window.location.href = 'mailto:comercial@asafan.com.br?subject=' + subject + '&body=' + body;
-
-  document.getElementById('contactSuccess').classList.add('show');
-  form.reset();
+  submitForm(e.target, 'contact', 'contactSuccess', 'contactError');
   return false;
 }
 
-// Career form handler
+// Career form handler — carreira.html
 function handleCareerForm(e) {
   e.preventDefault();
-  var form = e.target;
-  var data = new FormData(form);
-
-  var subject = encodeURIComponent('Currículo - ' + data.get('nome') + ' - ' + data.get('cargo'));
-  var body = encodeURIComponent(
-    'Nome: ' + data.get('nome') + '\n' +
-    'Data de Nascimento: ' + data.get('nascimento') + '\n' +
-    'E-mail: ' + data.get('email') + '\n' +
-    'Telefone: ' + data.get('telefone') + '\n' +
-    'Cargo de Interesse: ' + data.get('cargo') + '\n' +
-    'Pretensão Salarial: ' + (data.get('pretensao') || '-') + '\n\n' +
-    'Experiência Profissional:\n' + data.get('experiencia') + '\n\n' +
-    'Formação:\n' + data.get('formacao') + '\n\n' +
-    'Informações Complementares:\n' + (data.get('complementares') || '-')
-  );
-  window.location.href = 'mailto:comercial@asafan.com.br?subject=' + subject + '&body=' + body;
-
-  document.getElementById('careerSuccess').classList.add('show');
-  form.reset();
+  submitForm(e.target, 'career', 'careerSuccess', 'careerError');
   return false;
 }
+
+// Brazilian phone mask: (XX) XXXXX-XXXX (mobile) or (XX) XXXX-XXXX (landline).
+// Reformats on every input so paste + typing both end up clean.
+function maskPhone(el) {
+  el.addEventListener('input', function () {
+    var v = el.value.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 10) {
+      el.value = '(' + v.slice(0, 2) + ') ' + v.slice(2, 7) + '-' + v.slice(7, 11);
+    } else if (v.length > 6) {
+      el.value = '(' + v.slice(0, 2) + ') ' + v.slice(2, 6) + '-' + v.slice(6, 10);
+    } else if (v.length > 2) {
+      el.value = '(' + v.slice(0, 2) + ') ' + v.slice(2);
+    } else if (v.length > 0) {
+      el.value = '(' + v;
+    } else {
+      el.value = '';
+    }
+  });
+}
+
+// Date mask: DD/MM/AAAA
+function maskDate(el) {
+  el.addEventListener('input', function () {
+    var v = el.value.replace(/\D/g, '').slice(0, 8);
+    if (v.length > 4) {
+      el.value = v.slice(0, 2) + '/' + v.slice(2, 4) + '/' + v.slice(4, 8);
+    } else if (v.length > 2) {
+      el.value = v.slice(0, 2) + '/' + v.slice(2);
+    } else {
+      el.value = v;
+    }
+  });
+}
+
+// Brazilian currency mask: R$ X.XXX,XX (treats every keystroke as cents).
+function maskCurrency(el) {
+  el.addEventListener('input', function () {
+    var digits = el.value.replace(/\D/g, '');
+    if (!digits) { el.value = ''; return; }
+    if (digits.length > 13) digits = digits.slice(0, 13);
+    var num = (parseInt(digits, 10) / 100).toFixed(2);
+    var parts = num.split('.');
+    var intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    el.value = 'R$ ' + intPart + ',' + parts[1];
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var byId = function (id) { return document.getElementById(id); };
+  var ct = byId('contact-telefone'); if (ct) maskPhone(ct);
+  var rt = byId('career-telefone');  if (rt) maskPhone(rt);
+  var rn = byId('career-nascimento'); if (rn) maskDate(rn);
+  var rp = byId('career-pretensao');  if (rp) maskCurrency(rp);
+});

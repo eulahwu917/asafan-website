@@ -2,9 +2,14 @@
 
 Static marketing + product-catalog site for **ASA Fan** (Adda South America Corporation), a Brazilian manufacturer of microventiladores AC/DC, ventiladores axiais, and acessórios (telas, grelhas, porta-filtros, termostatos). Products are manufactured in China; QA and distribution operate from Cotia/SP. Founded 1999.
 
-- **Live:** https://eulahwu917.github.io/asafan-website/
-- **Hosting:** GitHub Pages (auto-deploys from `main`)
-- **Stack:** Hand-written HTML / CSS / vanilla JS — no build step, no framework, no package.json
+- **Live (current):** https://eulahwu917.github.io/asafan-website/ — production until Locaweb cutover propagates
+- **Staging (works):** http://asafan2.hospedagemdesites.ws/ — Locaweb shared hosting, identical to what will land at asafan.com.br
+- **Target:** https://www.asafan.com.br/ — cutover **initiated** 2026-05-25 (Criador de Sites domain unbound), waiting on Locaweb HTTP router to propagate before SSL can be issued
+- **Hosting:**
+  - GitHub Pages auto-deploys from `main` (current live).
+  - Locaweb "Hospedagem I" Linux shared plan, PHP 8.3 — files in `/public_html/`, deployed via [scripts/deploy.ps1](scripts/deploy.ps1). **Cloudflare WARP must be connected** on US residential networks (Comcast blocks passive FTP data ports otherwise). FTP host: `ftp.asafan2.hospedagemdesites.ws` (NOT `ftp.asafan.com.br` — that IP is geo-fenced to Brazil).
+- **Stack:** Hand-written HTML / CSS / vanilla JS — no build step, no framework, no package.json.
+- **Form backend:** [submit.php](submit.php) at site root — authenticated SMTP via `stream_socket_client` (no PHPMailer dep) since Locaweb has `mail()` in `disable_functions`. Sends from `noreply@asafan.com.br`, delivers to `comercial@asafan.com.br`, `Reply-To` is the submitter. Credentials in `/home/asafan2/mail-config.php` (one level ABOVE the web root, gitignored, uploaded manually via Web FTP — see [mail-config.example.php](mail-config.example.php) for the structure).
 - **Fonts:** Inter via Google Fonts. **Icons:** Lucide (CDN). **Color tokens:** navy `#1A1F60`, red `#CC0000`.
 
 ## Pages
@@ -98,14 +103,26 @@ Source of truth: **`raw_assets/product_site/dados para site.xlsx`** (sheet `Plan
 
 Carried across sessions, priority-ordered:
 
-1. **New SKUs in 0521 drop not yet in xlsx** — 3 porta-filtros (P40/P50/P60), ~5 telas (3010P/3018P/3023P/3024P/3025P), grelhas G70/G3612, ~10 axiais (4070A/4071A/4572A/5071A/5073A series). Customer to confirm catalog additions; append rows to `dados para site.xlsx` and re-run `generate_cards.py --apply`.
-2. **A123 photo** — still a high-res phone shot (704 KB, 2160×2114) without a white-bg version in any photo drop. Schedule reshoot or downsize.
-3. **Category landing pages** still placeholder: microventiladores.html, axiais.html, acessorios.html.
-4. **Forms** — replace `mailto:` with Formspree or a tiny PHP/Functions endpoint.
-5. **Hero video compression** (`assets/video/hero-video.mp4` ≈ 4 MB at 1280×720).
-6. **Empty `sameAs`** in Organization JSON-LD — populate when social URLs exist.
-7. **`generate_cards.py` section-row brittleness** — slices are hardcoded (e.g. `rows[43:64]` for axiais). Deleting an xlsx row shifts everything below and breaks downstream slices. Workaround: blank cells in-place instead of deleting rows. Real fix: dynamic section detection via the "CÓD" separator rows.
-8. **Per-SKU `object-position`** — currently empty (`IMG_STYLE_OVERRIDES = {}` in `generate_cards.py`). Add codes here if individual photos crop badly.
+**Cutover-in-progress items** (the 2026-05-25 deploy session is mid-flight — see [sessions/2026-05-25-locaweb-domain-deploy.md](sessions/2026-05-25-locaweb-domain-deploy.md) for the full play-by-play):
+
+1. **Wait for Locaweb HTTP router to propagate domain unbind.** Panel shows "Domínio em remoção" for `asafan.com.br`. Check by hitting the URL and looking for `Server: nginx` (good — cutover landed) vs `Server: Cowboy` (still on Criador de Sites). 5-60 min typical.
+2. **Enable Let's Encrypt SSL** on `asafan.com.br` once cutover lands (Locaweb panel, look for SSL/Certificado option). Cannot run before cutover finishes.
+3. **Hard-refresh browser** (Ctrl+Shift+R) on form pages after cutover — confirm honeypot is hidden and input masks work. CSS was cached during testing.
+4. **Verify `comercial@asafan.com.br` inbox** for the two curl test emails (`[Site] Contato: Teste curl pos-SMTP` and `[Site] Candidatura: Teste curl career - Administrativo`). Check Inbox AND Spam — first sends from a new mailbox can be spam-filtered.
+5. **Rotate credentials**: FTP password for `asafan2` (was transmitted plaintext during deploy), `noreply@asafan.com.br` mailbox password (passed through chat). After rotating, update `/home/asafan2/mail-config.php` on the server AND your local copy.
+6. **Update this PROJECT.md** — flip the **Live:** line from GitHub Pages to `https://www.asafan.com.br/` once SSL is on.
+
+**Longer-running deferred items:**
+
+7. **New SKUs in 0521 drop not yet in xlsx** — 3 porta-filtros (P40/P50/P60), ~5 telas (3010P/3018P/3023P/3024P/3025P), grelhas G70/G3612, ~10 axiais (4070A/4071A/4572A/5071A/5073A series). Customer to confirm catalog additions; append rows to `dados para site.xlsx` and re-run `generate_cards.py --apply`.
+8. **A123 photo** — still a high-res phone shot (704 KB, 2160×2114) without a white-bg version in any photo drop. Schedule reshoot or downsize.
+9. **Category landing pages** still placeholder: microventiladores.html, axiais.html, acessorios.html.
+10. **Hero video compression** (`assets/video/hero-video.mp4` ≈ 4 MB at 1280×720) — uploaded fine via FTP, but compressing to ~1.5 MB would speed up first-paint.
+11. **Empty `sameAs`** in Organization JSON-LD — populate when social URLs exist.
+12. **`generate_cards.py` section-row brittleness** — slices are hardcoded (e.g. `rows[43:64]` for axiais). Deleting an xlsx row shifts everything below and breaks downstream slices. Workaround: blank cells in-place instead of deleting rows. Real fix: dynamic section detection via the "CÓD" separator rows.
+13. **Per-SKU `object-position`** — currently empty (`IMG_STYLE_OVERRIDES = {}` in `generate_cards.py`). Add codes here if individual photos crop badly.
+
+**Big wins landed 2026-05-25:** Forms now POST to [submit.php](submit.php) using **authenticated SMTP** (not the broken `mail()` path that Locaweb disables, nor the previous `mailto:` fallback that silently failed for webmail users). PHP 8.3 on the account (was 5.3.29). Brazilian input masks on phone/date/currency. Honeypot anti-spam. Reusable [scripts/deploy.ps1](scripts/deploy.ps1) for future deploys via Cloudflare WARP.
 
 ## Where to look
 

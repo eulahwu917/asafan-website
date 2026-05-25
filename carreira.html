@@ -112,7 +112,7 @@
               </div>
               <div class="form__group">
                 <label class="form__label" for="career-nascimento">Data de Nascimento <span class="required">*</span></label>
-                <input type="text" class="form__input" id="career-nascimento" name="nascimento" required placeholder="DD/MM/AAAA">
+                <input type="text" class="form__input" id="career-nascimento" name="nascimento" required placeholder="DD/MM/AAAA" inputmode="numeric" maxlength="10">
               </div>
             </div>
             <div class="form__row">
@@ -122,7 +122,7 @@
               </div>
               <div class="form__group">
                 <label class="form__label" for="career-telefone">Telefone <span class="required">*</span></label>
-                <input type="tel" class="form__input" id="career-telefone" name="telefone" required placeholder="(11) 99999-9999">
+                <input type="tel" class="form__input" id="career-telefone" name="telefone" required placeholder="(11) 99999-9999" inputmode="tel" maxlength="15">
               </div>
             </div>
             <div class="form__row">
@@ -139,7 +139,7 @@
               </div>
               <div class="form__group">
                 <label class="form__label" for="career-pretensao">Pretensão Salarial</label>
-                <input type="text" class="form__input" id="career-pretensao" name="pretensao" placeholder="R$ 0.000,00">
+                <input type="text" class="form__input" id="career-pretensao" name="pretensao" placeholder="R$ 0.000,00" inputmode="numeric">
               </div>
             </div>
             <div class="form__group">
@@ -160,11 +160,16 @@
                 <span>Autorizo a ASA Fan a tratar meus dados pessoais para fins de processo seletivo, em conformidade com a Lei Geral de Proteção de Dados (LGPD nº 13.709/2018). <span class="required">*</span></span>
               </label>
             </div>
+            <div class="form__honeypot" aria-hidden="true">
+              <label for="career-website">Não preencha este campo</label>
+              <input type="text" id="career-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <button type="submit" class="btn btn--primary" style="width:100%">Enviar Candidatura</button>
           </form>
-          <div class="form__success" id="careerSuccess">
+          <div class="form__success" id="careerSuccess" role="status" aria-live="polite">
             Obrigado por se interessar na ASA Fan. Entraremos em contato em breve.
           </div>
+          <div class="form__error" id="careerError" role="alert" aria-live="assertive"></div>
         </div>
         </div>
       </div>

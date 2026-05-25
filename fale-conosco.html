@@ -121,7 +121,7 @@
             <div class="form__row">
               <div class="form__group">
                 <label class="form__label" for="contact-telefone">Telefone <span class="required">*</span></label>
-                <input type="tel" class="form__input" id="contact-telefone" name="telefone" required placeholder="(11) 99999-9999">
+                <input type="tel" class="form__input" id="contact-telefone" name="telefone" required placeholder="(11) 99999-9999" inputmode="tel" maxlength="15">
               </div>
               <div class="form__group">
                 <label class="form__label" for="contact-email">E-mail <span class="required">*</span></label>
@@ -132,11 +132,16 @@
               <label class="form__label" for="contact-mensagem">Mensagem</label>
               <textarea class="form__textarea" id="contact-mensagem" name="mensagem" placeholder="Descreva sua necessidade ou dúvida..."></textarea>
             </div>
+            <div class="form__honeypot" aria-hidden="true">
+              <label for="contact-website">Não preencha este campo</label>
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <button type="submit" class="btn btn--primary" style="width:100%">Enviar Mensagem</button>
           </form>
-          <div class="form__success" id="contactSuccess">
+          <div class="form__success" id="contactSuccess" role="status" aria-live="polite">
             Mensagem enviada com sucesso! Retornaremos em breve.
           </div>
+          <div class="form__error" id="contactError" role="alert" aria-live="assertive"></div>
         </div>
       </div>
     </div>
