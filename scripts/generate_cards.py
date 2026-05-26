@@ -40,6 +40,11 @@ PRODUTO_DIR = pathlib.Path('produto')
 OUT_CARDS = pathlib.Path('scripts/_generated_cards.html')
 SITE_BASE = 'https://www.asafan.com.br'
 WA_PHONE = '551134065088'
+# Cache-buster appended to css/style.css and js/main.js references.
+# Bump this (and the matching string in top-level *.html files) whenever
+# either of those files changes — Locaweb's nginx serves them with a
+# 10-year Cache-Control, so without a new URL browsers won't refetch.
+ASSET_VERSION = '2026-05-26'
 WA_GENERIC_HREF = (
     'https://wa.me/' + WA_PHONE
     + '?text=' + urllib.parse.quote('Olá! Gostaria de solicitar uma cotação.')
@@ -527,7 +532,7 @@ def detail_page_html(rec):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v={ASSET_VERSION}">
 </head>'''
 
     header_block = f'''  <header class="header">
@@ -650,7 +655,7 @@ def detail_page_html(rec):
   </footer>'''
 
     scripts_block = (
-        '  <script src="../js/main.js"></script>\n\n'
+        f'  <script src="../js/main.js?v={ASSET_VERSION}"></script>\n\n'
         '  <!-- Structured Data: Product -->\n'
         '  <script type="application/ld+json">\n'
         f'{product_schema_json}\n'
