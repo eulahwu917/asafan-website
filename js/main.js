@@ -91,6 +91,37 @@ document.addEventListener('DOMContentLoaded', function() {
   start();
 });
 
+// Portfolio card carousel (index-cards.html) — native horizontal scroll, no wrap
+document.addEventListener('DOMContentLoaded', function() {
+  var track = document.querySelector('.portfolio__cards');
+  var prevBtn = document.querySelector('.portfolio__carousel-nav--prev');
+  var nextBtn = document.querySelector('.portfolio__carousel-nav--next');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function cardStep() {
+    var card = track.querySelector('.portfolio-card');
+    if (!card) return 300;
+    var gap = parseFloat(getComputedStyle(track).columnGap || 0) || 24;
+    return card.getBoundingClientRect().width + gap;
+  }
+
+  function updateNav() {
+    var maxScroll = track.scrollWidth - track.clientWidth;
+    prevBtn.disabled = track.scrollLeft <= 4;
+    nextBtn.disabled = track.scrollLeft >= maxScroll - 4;
+  }
+
+  nextBtn.addEventListener('click', function() {
+    track.scrollBy({ left: cardStep(), behavior: 'smooth' });
+  });
+  prevBtn.addEventListener('click', function() {
+    track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
+  });
+  track.addEventListener('scroll', updateNav);
+  window.addEventListener('resize', updateNav);
+  updateNav();
+});
+
 // Mobile menu toggle
 function toggleMenu() {
   var nav = document.getElementById('mainNav');
@@ -201,8 +232,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Pre-select from ?tipo= URL param so links from index/header land on a filtered view.
-  var tipoParam = new URLSearchParams(location.search).get('tipo');
+  // Pre-select from ?tipo= and ?subtipo= URL params so links from index/header land on a filtered view.
+  var urlParams = new URLSearchParams(location.search);
+  var tipoParam = urlParams.get('tipo');
   if (tipoParam) {
     var preselect = document.querySelector('.filter-btn[data-filter="tipo"][data-value="' + tipoParam + '"]');
     if (preselect) {
@@ -210,6 +242,17 @@ document.addEventListener('DOMContentLoaded', function() {
         b.classList.remove('active');
       });
       preselect.classList.add('active');
+    }
+  }
+
+  var subtipoParam = urlParams.get('subtipo');
+  if (subtipoParam) {
+    var preselectSub = document.querySelector('.filter-btn[data-filter="subtipo"][data-value="' + subtipoParam + '"]');
+    if (preselectSub) {
+      document.querySelectorAll('.filter-btn[data-filter="subtipo"]').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      preselectSub.classList.add('active');
     }
   }
 
