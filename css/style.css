@@ -1124,7 +1124,6 @@ ul { list-style: none; }
 
 .cta-banner__desc {
   font-size: 1.05rem;
-  opacity: 0.85;
   max-width: 480px;
   margin: 0 auto 32px;
   line-height: 1.7;
@@ -1601,9 +1600,10 @@ ul { list-style: none; }
 
 /* ===== FOOTER ===== */
 .footer {
-  background: var(--primary-tint);
+  background: var(--white);
   color: var(--text);
   padding: 48px 0 24px;
+  border-top: 1px solid var(--border);
 }
 
 .footer__content {
