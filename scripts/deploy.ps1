@@ -86,11 +86,12 @@ function Invoke-FtpMakeDir {
   try {
     $resp = $req.GetResponse(); $resp.Close()
   } catch [System.Net.WebException] {
+    # Best-effort: directory-already-exists is expected on every re-deploy (this host doesn't
+    # always return the standard 550 for that case, sometimes a generic 500 instead), and a
+    # genuinely missing/bad path will surface loudly on the file upload that follows anyway.
     $ftpResp = $_.Exception.Response -as [System.Net.FtpWebResponse]
-    if ($ftpResp -and $ftpResp.StatusCode -eq [System.Net.FtpStatusCode]::ActionNotTakenFileUnavailable) {
-      return  # already exists
-    }
-    throw
+    $code = if ($ftpResp) { $ftpResp.StatusCode } else { '(no response)' }
+    Write-Host "  (mkdir $RemotePath -> $code, continuing)" -ForegroundColor DarkGray
   }
 }
 
