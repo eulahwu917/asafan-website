@@ -31,6 +31,8 @@ $ExcludeNames = @(
   '.git', '.gitignore', '.gitattributes',
   '.claude', '.gstack', '.vscode',
   'sessions', 'raw_assets', 'project files', 'assets_upgrade',
+  # docs/ holds internal client feedback files, not site content — must never go to a public URL
+  'docs',
   'scripts',
   'PROJECT.md', 'REFERENCE.md',
   # deploy artifacts (built locally, not part of the live site)
