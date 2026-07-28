@@ -91,37 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
   start();
 });
 
-// Portfolio card carousel (index-cards.html) — native horizontal scroll, no wrap
-document.addEventListener('DOMContentLoaded', function() {
-  var track = document.querySelector('.portfolio__cards');
-  var prevBtn = document.querySelector('.portfolio__carousel-nav--prev');
-  var nextBtn = document.querySelector('.portfolio__carousel-nav--next');
-  if (!track || !prevBtn || !nextBtn) return;
-
-  function cardStep() {
-    var card = track.querySelector('.portfolio-card');
-    if (!card) return 300;
-    var gap = parseFloat(getComputedStyle(track).columnGap || 0) || 24;
-    return card.getBoundingClientRect().width + gap;
-  }
-
-  function updateNav() {
-    var maxScroll = track.scrollWidth - track.clientWidth;
-    prevBtn.disabled = track.scrollLeft <= 4;
-    nextBtn.disabled = track.scrollLeft >= maxScroll - 4;
-  }
-
-  nextBtn.addEventListener('click', function() {
-    track.scrollBy({ left: cardStep(), behavior: 'smooth' });
-  });
-  prevBtn.addEventListener('click', function() {
-    track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
-  });
-  track.addEventListener('scroll', updateNav);
-  window.addEventListener('resize', updateNav);
-  updateNav();
-});
-
 // Mobile menu toggle
 function toggleMenu() {
   var nav = document.getElementById('mainNav');
