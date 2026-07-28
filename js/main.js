@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Hero carousel — cross-fade with auto-advance, dots, prev/next, pause on hover
+// Hero carousel — cross-fade with auto-advance, dots, prev/next, pause on hover.
+// Respects prefers-reduced-motion (starts paused) and exposes a manual pause/play toggle
+// (WCAG 2.2.2 — auto-advancing content needs a way to stop it besides hover/focus).
 document.addEventListener('DOMContentLoaded', function() {
   var carousel = document.querySelector('.hero__carousel');
   if (!carousel) return;
@@ -46,16 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
   var dots = carousel.querySelectorAll('.hero__dot');
   var prevBtn = carousel.querySelector('.hero__nav--prev');
   var nextBtn = carousel.querySelector('.hero__nav--next');
+  var pauseBtn = carousel.querySelector('.hero__pause');
   if (slides.length <= 1) {
     if (prevBtn) prevBtn.style.display = 'none';
     if (nextBtn) nextBtn.style.display = 'none';
     if (dots.length) dots.forEach(function(d) { d.style.display = 'none'; });
+    if (pauseBtn) pauseBtn.style.display = 'none';
     return;
   }
+
+  var PAUSE_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>';
+  var PLAY_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>';
 
   var current = 0;
   var timer = null;
   var DELAY = 6000;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var userPaused = reduceMotion;
 
   function goTo(idx) {
     current = (idx + slides.length) % slides.length;
@@ -74,8 +83,15 @@ document.addEventListener('DOMContentLoaded', function() {
   function next() { goTo(current + 1); }
   function prev() { goTo(current - 1); }
 
-  function start() { stop(); timer = setInterval(next, DELAY); }
+  function start() { stop(); if (!userPaused) timer = setInterval(next, DELAY); }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  function updatePauseBtn() {
+    if (!pauseBtn) return;
+    pauseBtn.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
+    pauseBtn.setAttribute('aria-label', userPaused ? 'Retomar apresentação automática' : 'Pausar apresentação automática');
+    pauseBtn.innerHTML = userPaused ? PLAY_ICON : PAUSE_ICON;
+  }
 
   if (nextBtn) nextBtn.addEventListener('click', function() { next(); start(); });
   if (prevBtn) prevBtn.addEventListener('click', function() { prev(); start(); });
@@ -83,12 +99,48 @@ document.addEventListener('DOMContentLoaded', function() {
     d.addEventListener('click', function() { goTo(i); start(); });
   });
 
-  carousel.addEventListener('mouseenter', stop);
-  carousel.addEventListener('mouseleave', start);
-  carousel.addEventListener('focusin', stop);
-  carousel.addEventListener('focusout', start);
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', function() {
+      userPaused = !userPaused;
+      updatePauseBtn();
+      if (userPaused) { stop(); } else { start(); }
+    });
+  }
 
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', function() { if (!userPaused) start(); });
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', function() { if (!userPaused) start(); });
+
+  updatePauseBtn();
   start();
+});
+
+// Hero background video — only load it on desktop widths. It's a 4MB+ file that autoplay
+// would otherwise pull in full on every visit, mobile included; small screens keep the
+// solid hero background instead. Mirrors the CSS breakpoint at max-width: 768px.
+document.addEventListener('DOMContentLoaded', function() {
+  var video = document.querySelector('.hero__video-bg video');
+  if (!video) return;
+  var src = video.getAttribute('data-src');
+  if (!src) return;
+
+  var mq = window.matchMedia('(min-width: 769px)');
+  function apply() {
+    if (mq.matches) {
+      if (!video.getAttribute('src')) {
+        video.setAttribute('src', src);
+        video.load();
+        video.play().catch(function() {});
+      }
+    } else if (video.getAttribute('src')) {
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+    }
+  }
+  apply();
+  if (mq.addEventListener) mq.addEventListener('change', apply);
 });
 
 // Mobile menu toggle
@@ -131,6 +183,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var filterBtns = document.querySelectorAll('.filter-btn');
   if (!filterBtns.length) return;
 
+  function setActive(btn, active) {
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  }
+  filterBtns.forEach(function(btn) { setActive(btn, btn.classList.contains('active')); });
+
   function activeValue(name) {
     var groups = document.querySelectorAll('.filter-group');
     for (var i = 0; i < groups.length; i++) {
@@ -148,9 +206,9 @@ document.addEventListener('DOMContentLoaded', function() {
       var show = ctx.indexOf(tipo) >= 0;
       g.classList.toggle('is-hidden', !show);
       if (!show) {
-        g.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        g.querySelectorAll('.filter-btn').forEach(function(b) { setActive(b, false); });
         var allBtn = g.querySelector('.filter-btn[data-value="all"]');
-        if (allBtn) allBtn.classList.add('active');
+        if (allBtn) setActive(allBtn, true);
       }
     });
   }
@@ -193,10 +251,10 @@ document.addEventListener('DOMContentLoaded', function() {
       var parentGroup = btn.closest('.filter-group');
       if (parentGroup) {
         parentGroup.querySelectorAll('.filter-btn').forEach(function(b) {
-          b.classList.remove('active');
+          setActive(b, false);
         });
       }
-      btn.classList.add('active');
+      setActive(btn, true);
       applyFilters();
     });
   });
@@ -208,9 +266,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var preselect = document.querySelector('.filter-btn[data-filter="tipo"][data-value="' + tipoParam + '"]');
     if (preselect) {
       document.querySelectorAll('.filter-btn[data-filter="tipo"]').forEach(function(b) {
-        b.classList.remove('active');
+        setActive(b, false);
       });
-      preselect.classList.add('active');
+      setActive(preselect, true);
     }
   }
 
@@ -219,9 +277,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var preselectSub = document.querySelector('.filter-btn[data-filter="subtipo"][data-value="' + subtipoParam + '"]');
     if (preselectSub) {
       document.querySelectorAll('.filter-btn[data-filter="subtipo"]').forEach(function(b) {
-        b.classList.remove('active');
+        setActive(b, false);
       });
-      preselectSub.classList.add('active');
+      setActive(preselectSub, true);
     }
   }
 
