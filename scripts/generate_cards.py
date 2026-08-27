@@ -30,9 +30,15 @@ import json
 import pathlib
 import re
 import sys
-import urllib.parse
 
 import openpyxl
+from apply_sitewide import (
+    CONSENT_HEAD,
+    GENERIC_WHATSAPP_ENCODED,
+    NOSCRIPT,
+    VERSION as ASSET_VERSION,
+    update_page,
+)
 
 XLSX = 'raw_assets/0520/dados para site.xlsx'
 ASSETS = pathlib.Path('assets/product')
@@ -40,15 +46,7 @@ PRODUTO_DIR = pathlib.Path('produto')
 OUT_CARDS = pathlib.Path('scripts/_generated_cards.html')
 SITE_BASE = 'https://www.asafan.com.br'
 WA_PHONE = '551134065088'
-# Cache-buster appended to css/style.css and js/main.js references.
-# Bump this (and the matching string in top-level *.html files) whenever
-# either of those files changes — Locaweb's nginx serves them with a
-# 10-year Cache-Control, so without a new URL browsers won't refetch.
-ASSET_VERSION = '2026-05-26'
-WA_GENERIC_HREF = (
-    'https://wa.me/' + WA_PHONE
-    + '?text=' + urllib.parse.quote('Olá! Gostaria de solicitar uma cotação.')
-)
+WA_GENERIC_HREF = GENERIC_WHATSAPP_ENCODED
 
 
 def norm(s):
@@ -507,6 +505,7 @@ def detail_page_html(rec):
     head = f'''<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+{CONSENT_HEAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{html.escape(description)}">
@@ -540,7 +539,7 @@ def detail_page_html(rec):
       <a href="../index.html" class="header__logo">
         <img src="../assets/logo/logo.png" alt="ASA Fan Logo">
       </a>
-      <button class="header__toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      <button type="button" class="header__toggle" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="header__nav" id="mainNav">
@@ -557,7 +556,7 @@ def detail_page_html(rec):
         <a href="../aplicacoes.html">Aplicações</a>
         <a href="../carreira.html">Carreira</a>
         <a href="../fale-conosco.html">Contato</a>
-        <a href="https://wa.me/{WA_PHONE}?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer" class="header__cta">{WA_ICON_SMALL}Solicitar Cotação</a>
+        <a href="{WA_GENERIC_HREF}" target="_blank" rel="noopener noreferrer" class="header__cta">{WA_ICON_SMALL}Solicitar Cotação</a>
       </nav>
     </div>
   </header>'''
@@ -589,7 +588,7 @@ def detail_page_html(rec):
         </table>
 
         <div class="product-detail__media">
-          <div class="product-detail__carousel" aria-roledescription="carousel" aria-label="Imagens do produto {html.escape(sku)}">
+          <div class="product-detail__carousel" role="region" aria-roledescription="carousel" aria-label="Imagens do produto {html.escape(sku)}">
             <div class="product-detail__slides">
 {slides_html}
             </div>
@@ -599,7 +598,7 @@ def detail_page_html(rec):
             <button class="product-detail__nav product-detail__nav--next" type="button" aria-label="Próxima imagem">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
-            <div class="product-detail__dots" aria-label="Selecionar imagem">
+            <div class="product-detail__dots" role="group" aria-label="Selecionar imagem">
 {dots_html}
             </div>
           </div>
@@ -624,17 +623,19 @@ def detail_page_html(rec):
           <p class="footer__desc">Ventilação industrial com precisão desde 1999.</p>
         </div>
         <div>
-          <h4 class="footer__title">Navegação</h4>
+          <h2 class="footer__title">Navegação</h2>
           <div class="footer__links">
             <a href="../index.html">Home</a>
             <a href="../quem-somos.html">Sobre</a>
             <a href="../produtos.html">Produtos</a>
-            <a href="https://wa.me/551134065088?text=Olá! Gostaria de solicitar uma cotação." target="_blank" rel="noopener noreferrer">Cotação</a>
+            <a href="''' + WA_GENERIC_HREF + '''" target="_blank" rel="noopener noreferrer">Cotação</a>
             <a href="../fale-conosco.html">Contato</a>
+            <a href="../privacidade.html">Privacidade</a>
+            <button type="button" class="footer__privacy-button js-cookie-settings">Preferências de cookies</button>
           </div>
         </div>
         <div>
-          <h4 class="footer__title">Produtos</h4>
+          <h2 class="footer__title">Produtos</h2>
           <div class="footer__links">
             <a href="../produtos.html">Microventiladores AC/DC</a>
             <a href="../produtos.html?tipo=axial">Ventiladores Axiais</a>
@@ -642,7 +643,7 @@ def detail_page_html(rec):
           </div>
         </div>
         <div>
-          <h4 class="footer__title">Contato</h4>
+          <h2 class="footer__title">Contato</h2>
           <p class="footer__contact-item">R. Santa Mônica, 1130, Cotia/SP</p>
           <p class="footer__contact-item">Tel: (11) 3406-5088</p>
           <p class="footer__contact-item">comercial@asafan.com.br</p>
@@ -668,7 +669,7 @@ def detail_page_html(rec):
 
     skip_link = '  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>'
     return (
-        head + '\n<body>\n'
+        head + '\n<body>\n' + NOSCRIPT + '\n'
         + skip_link + '\n\n'
         + header_block + '\n\n'
         + '  <main id="main-content">\n\n'
@@ -797,6 +798,7 @@ def main():
     for rec in records:
         out = PRODUTO_DIR / f'{slug(rec["codigo"])}.html'
         out.write_text(detail_page_html(rec), encoding='utf-8')
+        update_page(out)
         detail_count += 1
 
     print(f'Generated {len(cards)} catalog cards -> {OUT_CARDS}')
@@ -807,6 +809,7 @@ def main():
 
     if args.apply:
         patch_produtos_html(cards_html_block)
+        update_page(pathlib.Path('produtos.html'))
         print('Patched produtos.html')
         patch_sitemap(records)
         print('Patched sitemap.xml')
