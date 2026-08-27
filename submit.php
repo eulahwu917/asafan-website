@@ -11,6 +11,8 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: same-origin');
+header('Cache-Control: no-store, max-age=0');
+header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
 
 function bail(int $status, string $message): void {
     http_response_code($status);
@@ -19,16 +21,77 @@ function bail(int $status, string $message): void {
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Allow: POST');
     bail(405, 'Metodo nao permitido.');
 }
 
+$contentLength = (int) ($_SERVER['CONTENT_LENGTH'] ?? 0);
+if ($contentLength > 131072) {
+    bail(413, 'Solicitacao muito grande.');
+}
+
+// Browser form posts should originate on the ASA Fan website. Origin is not
+// always supplied by non-browser clients, so it is an additional signal rather
+// than the only anti-abuse control.
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if ($origin !== '' && !in_array($origin, ['https://www.asafan.com.br', 'https://asafan.com.br'], true)) {
+    bail(403, 'Origem da solicitacao nao permitida.');
+}
+
+function post_string(string $key): string {
+    $value = $_POST[$key] ?? '';
+    if (!is_string($value)) {
+        bail(400, 'Formato de campo invalido.');
+    }
+    return $value;
+}
+
+function enforce_rate_limit(string $clientKey, int $maxRequests = 10, int $windowSeconds = 900): void {
+    $path = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR
+        . 'asafan-form-' . hash('sha256', $clientKey) . '.json';
+    $fp = @fopen($path, 'c+');
+    if ($fp === false) {
+        // Do not take the form offline if the host temporarily denies temp-file writes.
+        error_log('[submit.php] Unable to open rate-limit file.');
+        return;
+    }
+    try {
+        if (!flock($fp, LOCK_EX)) {
+            return;
+        }
+        $raw = stream_get_contents($fp);
+        $timestamps = json_decode($raw ?: '[]', true);
+        if (!is_array($timestamps)) {
+            $timestamps = [];
+        }
+        $now = time();
+        $timestamps = array_values(array_filter($timestamps, static function ($value) use ($now, $windowSeconds): bool {
+            return is_int($value) && $value > ($now - $windowSeconds);
+        }));
+        if (count($timestamps) >= $maxRequests) {
+            header('Retry-After: ' . $windowSeconds);
+            bail(429, 'Muitas tentativas. Aguarde alguns minutos e tente novamente.');
+        }
+        $timestamps[] = $now;
+        ftruncate($fp, 0);
+        rewind($fp);
+        fwrite($fp, json_encode($timestamps));
+        fflush($fp);
+    } finally {
+        flock($fp, LOCK_UN);
+        fclose($fp);
+    }
+}
+
+enforce_rate_limit($_SERVER['REMOTE_ADDR'] ?? 'unknown');
+
 // Honeypot — bots fill hidden fields, humans do not.
-if (!empty($_POST['website'] ?? '') || !empty($_POST['url'] ?? '')) {
+if (post_string('website') !== '' || post_string('url') !== '') {
     echo json_encode(['ok' => true]);
     exit;
 }
 
-$type = $_POST['type'] ?? '';
+$type = post_string('type');
 if (!in_array($type, ['contact', 'career'], true)) {
     bail(400, 'Tipo de formulario invalido.');
 }
@@ -47,10 +110,10 @@ function clean_multiline(string $value, int $maxLen = 10000): string {
 }
 
 if ($type === 'contact') {
-    $nome     = clean_line($_POST['nome']     ?? '');
-    $telefone = clean_line($_POST['telefone'] ?? '');
-    $email    = clean_line($_POST['email']    ?? '');
-    $mensagem = clean_multiline($_POST['mensagem'] ?? '');
+    $nome     = clean_line(post_string('nome'));
+    $telefone = clean_line(post_string('telefone'));
+    $email    = clean_line(post_string('email'));
+    $mensagem = clean_multiline(post_string('mensagem'));
 
     if ($nome === '' || $telefone === '' || $email === '') {
         bail(400, 'Preencha os campos obrigatorios.');
@@ -67,16 +130,16 @@ if ($type === 'contact') {
         "Mensagem:\n" . ($mensagem !== '' ? $mensagem : '(sem mensagem)') . "\n";
 
 } else { // career
-    $nome           = clean_line($_POST['nome']           ?? '');
-    $nascimento     = clean_line($_POST['nascimento']     ?? '');
-    $email          = clean_line($_POST['email']          ?? '');
-    $telefone       = clean_line($_POST['telefone']       ?? '');
-    $cargo          = clean_line($_POST['cargo']          ?? '');
-    $pretensao      = clean_line($_POST['pretensao']      ?? '');
-    $experiencia    = clean_multiline($_POST['experiencia']    ?? '');
-    $formacao       = clean_multiline($_POST['formacao']       ?? '');
-    $complementares = clean_multiline($_POST['complementares'] ?? '');
-    $lgpd           = !empty($_POST['lgpd'] ?? '');
+    $nome           = clean_line(post_string('nome'));
+    $nascimento     = clean_line(post_string('nascimento'));
+    $email          = clean_line(post_string('email'));
+    $telefone       = clean_line(post_string('telefone'));
+    $cargo          = clean_line(post_string('cargo'));
+    $pretensao      = clean_line(post_string('pretensao'));
+    $experiencia    = clean_multiline(post_string('experiencia'));
+    $formacao       = clean_multiline(post_string('formacao'));
+    $complementares = clean_multiline(post_string('complementares'));
+    $lgpd           = post_string('lgpd') !== '';
 
     if ($nome === '' || $email === '' || $telefone === '' || $cargo === '' ||
         $experiencia === '' || $formacao === '') {
@@ -87,6 +150,15 @@ if ($type === 'contact') {
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         bail(400, 'E-mail invalido.');
+    }
+    $allowedRoles = ['Administrativo', 'Financeiro', 'Comercial e Vendas', 'Representante Comercial', 'Estoque/Logística'];
+    if (!in_array($cargo, $allowedRoles, true)) {
+        bail(400, 'Cargo de interesse invalido.');
+    }
+    $birthDate = DateTimeImmutable::createFromFormat('!d/m/Y', $nascimento);
+    $dateErrors = DateTimeImmutable::getLastErrors();
+    if ($birthDate === false || ($dateErrors !== false && ($dateErrors['warning_count'] > 0 || $dateErrors['error_count'] > 0))) {
+        bail(400, 'Data de nascimento invalida.');
     }
 
     $subject = "[Site] Candidatura: $nome - $cargo";
@@ -113,6 +185,9 @@ foreach (['host', 'port', 'secure', 'username', 'password', 'from_address', 'fro
     if (!isset($config[$k])) {
         bail(500, 'Configuracao incompleta. Envie um e-mail diretamente para comercial@asafan.com.br.');
     }
+}
+if (!in_array($config['secure'], ['ssl', 'tls'], true)) {
+    bail(500, 'Configuracao de seguranca do servidor de e-mail invalida.');
 }
 
 // ----- Compose the message -----

@@ -1,0 +1,33 @@
+name: Site quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+      - name: Check shared HTML updates are current
+        run: |
+          python scripts/apply_sitewide.py
+          git diff --exit-code
+      - name: Validate site structure and links
+        run: python scripts/check_site.py
+      - name: Validate JavaScript syntax
+        run: |
+          node --check js/main.js
+          node --check js/consent.js
+      - name: Validate PHP syntax
+        run: php -l submit.php

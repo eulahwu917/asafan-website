@@ -143,19 +143,32 @@ document.addEventListener('DOMContentLoaded', function() {
   if (mq.addEventListener) mq.addEventListener('change', apply);
 });
 
-// Mobile menu toggle
-function toggleMenu() {
+// Mobile menu toggle. Keeps the visible state and assistive-technology state in sync.
+function toggleMenu(button) {
   var nav = document.getElementById('mainNav');
-  nav.classList.toggle('open');
+  if (!nav) return;
+  var open = nav.classList.toggle('open');
+  if (button) {
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  }
 }
 
 // Close mobile menu when clicking a link
 document.addEventListener('DOMContentLoaded', function() {
+  var menuButton = document.querySelector('.header__toggle');
+  if (menuButton) {
+    menuButton.addEventListener('click', function () { toggleMenu(menuButton); });
+  }
   var navLinks = document.querySelectorAll('.header__nav a');
   navLinks.forEach(function(link) {
     link.addEventListener('click', function() {
       var nav = document.getElementById('mainNav');
       nav.classList.remove('open');
+      if (menuButton) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Abrir menu');
+      }
     });
   });
 });
@@ -289,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Submits a form to /submit.php and updates the inline success/error elements.
 function submitForm(form, type, successId, errorId) {
   var data = new FormData(form);
-  data.append('type', type);
+  data.set('type', type);
 
   var button = form.querySelector('button[type="submit"]');
   var originalText = button ? button.textContent : '';
@@ -335,20 +348,6 @@ function submitForm(form, type, successId, errorId) {
         button.textContent = originalText;
       }
     });
-}
-
-// Contact form handler — fale-conosco.html
-function handleContactForm(e) {
-  e.preventDefault();
-  submitForm(e.target, 'contact', 'contactSuccess', 'contactError');
-  return false;
-}
-
-// Career form handler — carreira.html
-function handleCareerForm(e) {
-  e.preventDefault();
-  submitForm(e.target, 'career', 'careerSuccess', 'careerError');
-  return false;
 }
 
 // Brazilian phone mask: (XX) XXXXX-XXXX (mobile) or (XX) XXXX-XXXX (landline).
@@ -403,4 +402,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var rt = byId('career-telefone');  if (rt) maskPhone(rt);
   var rn = byId('career-nascimento'); if (rn) maskDate(rn);
   var rp = byId('career-pretensao');  if (rp) maskCurrency(rp);
+
+  document.querySelectorAll('form[data-form-type]').forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var type = form.getAttribute('data-form-type');
+      if (type === 'contact') submitForm(form, type, 'contactSuccess', 'contactError');
+      if (type === 'career') submitForm(form, type, 'careerSuccess', 'careerError');
+    });
+  });
 });
